@@ -18,7 +18,7 @@ users.each do |user|
   User.create(email: user, password: "12345678", password_confirmation: "12345678")
 end
 
-#roles = %w[admin moderator author]
+#roles = %w[admin moderator author user]
 #roles.each do |role|
-#  Role.create()
+#  Role.create(name: role)
 #end
