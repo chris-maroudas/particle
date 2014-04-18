@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+# Move those to application.yml from figaro
+#categories = %w[news services personal diary]
+#categories.each do |category|
+#  Category.create(name: category)
+#end
+
+users = %w[admin@gmail.com author@gmail.com user@gmail.com]
+users.each do |user|
+  User.create(email: user, password: "12345678", password_confirmation: "12345678")
+end
+
+#roles = %w[admin moderator author]
+#roles.each do |role|
+#  Role.create()
+#end
