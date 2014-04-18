@@ -15,6 +15,15 @@
     .row
       %h1
         God's particle
+      %hr
+        - if user_signed_in?
+          You're logged in as:
+          = current_user.email if user_signed_in?
+          = link_to "Log out!", destroy_user_session_path, method: :delete
+        - else
+          = link_to "Sign up!", new_user_registration_path
+          = link_to "Sign in", new_user_session_path
+
     %hr
     .row
       .eight-columns
