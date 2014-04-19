@@ -11,6 +11,9 @@ class Ability
         can [:read, :create, :destroy], Ckeditor::Picture
         can [:read, :create, :destroy], Ckeditor::AttachmentFile
 
+        can :access, :rails_admin   # grant access to rails_admin
+        can :dashboard              # grant access to the dashboard
+
         can :manage, :all
       elsif user.role? :author
         can :manage, Article

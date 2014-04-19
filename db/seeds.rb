@@ -33,3 +33,7 @@ User.find_by_email(users.fourth).roles << Role.find_by_name(roles.fourth)
 
 StaticPage.create(title: "About us", content: "Choo chooo!")
 StaticPage.create(title: "Services", content: "Choo chooo!")
+
+NodeType.create(name: "Show a static page", controller: "static_pages", action: "show")
+NodeType.create(name: "Display all articles", controller: "articles", action: "index")
+Menu.create(name: "Main menu", position: 1)
