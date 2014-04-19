@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140419020952) do
+ActiveRecord::Schema.define(:version => 20140419020955) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -38,6 +38,31 @@ ActiveRecord::Schema.define(:version => 20140419020952) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "node_types", :force => true do |t|
+    t.string   "name"
+    t.string   "controller"
+    t.string   "action"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "nodes", :force => true do |t|
+    t.integer  "menu_id"
+    t.integer  "node_type_id"
+    t.integer  "position"
+    t.string   "name"
+    t.string   "optional_field"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
