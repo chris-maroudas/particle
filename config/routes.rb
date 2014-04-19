@@ -1,6 +1,9 @@
 Particle::Application.routes.draw do
 
 
+  resources :static_pages
+
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :articles

@@ -1,20 +1,15 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @article.title
 %p
   %b Content:
-  = @article.content
-%p
-  %b Slug:
-  = @article.slug
+  = raw @article.content
 %p
   %b Published:
   = @article.published
 %p
   %b User:
-  = @article.user_id
+  = @article.user.email
 
 = link_to 'Edit', edit_article_path(@article)
 \|

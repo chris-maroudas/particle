@@ -30,3 +30,6 @@ User.find_by_email(users.first).roles << Role.find_by_name(roles.second)
 User.find_by_email(users.second).roles << Role.find_by_name(roles.second)
 User.find_by_email(users.third).roles << Role.find_by_name(roles.third)
 User.find_by_email(users.fourth).roles << Role.find_by_name(roles.fourth)
+
+StaticPage.create(title: "About us", content: "Choo chooo!")
+StaticPage.create(title: "Services", content: "Choo chooo!")

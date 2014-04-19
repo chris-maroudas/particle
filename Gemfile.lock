@@ -316,7 +316,7 @@ DEPENDENCIES
   devise
   figaro
   foundation-rails
-  friendly_id
+  friendly_id (~> 4.0.10.1)
   globalize (~> 3.1.0)
   groupdate
   haml

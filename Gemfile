@@ -20,7 +20,7 @@ gem 'pry'
 gem 'pry-rails'
 
 # Default
-gem 'friendly_id'
+gem 'friendly_id', "~> 4.0.10.1"
 gem 'haml'
 gem 'haml-rails'
 gem 'foundation-rails'
