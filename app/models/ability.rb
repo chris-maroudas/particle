@@ -6,13 +6,21 @@ class Ability
     if user
       # For logged in users
       if user.role? :admin
+        # Always performed
+        can :access, :ckeditor   # needed to access Ckeditor filebrowser
+        can [:read, :create, :destroy], Ckeditor::Picture
+        can [:read, :create, :destroy], Ckeditor::AttachmentFile
+
         can :manage, :all
       elsif user.role? :author
-        can :read, :all
+        can :manage, Article
+
+        can :access, :ckeditor   # needed to access Ckeditor filebrowser
+        can [:read, :create, :destroy], Ckeditor::Picture
+        can [:read, :create, :destroy], Ckeditor::AttachmentFile
       elsif user.role? :user
         can :read, Article
         #can :read, Post, published: true
-        #can :create, [Comment]
       end
 
     else
