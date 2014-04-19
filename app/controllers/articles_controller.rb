@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
+
+  load_and_authorize_resource
+
   def index
     @articles = Article.all
 
