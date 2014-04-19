@@ -13,12 +13,20 @@
 #  Category.create(name: category)
 #end
 
-users = %w[admin@gmail.com author@gmail.com user@gmail.com]
+
+roles = %w[admin moderator author user]
+roles.each do |role|
+  Role.create(name: role)
+end
+
+users = %w[admin@gmail.com moderator@gmail.com author@gmail.com user@gmail.com]
 users.each do |user|
   User.create(email: user, password: "12345678", password_confirmation: "12345678")
 end
 
-#roles = %w[admin moderator author user]
-#roles.each do |role|
-#  Role.create(name: role)
-#end
+User.find_by_email(users.first).roles << Role.find_by_name(roles.first)
+User.find_by_email(users.first).roles << Role.find_by_name(roles.second)
+
+User.find_by_email(users.second).roles << Role.find_by_name(roles.second)
+User.find_by_email(users.third).roles << Role.find_by_name(roles.third)
+User.find_by_email(users.fourth).roles << Role.find_by_name(roles.fourth)
