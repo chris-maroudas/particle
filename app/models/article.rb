@@ -13,7 +13,7 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :title, :content, :published, :slug, :title, :user_id
+  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids
 
   belongs_to :user
   has_and_belongs_to_many :categories

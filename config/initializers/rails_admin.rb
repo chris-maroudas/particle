@@ -6,9 +6,28 @@ RailsAdmin.config do |config|
 
   ### My configuration
 
+  # Article
   config.model Article do
+
     list do
+      field :title
+      field :content
+      field :user do
+        label "Written by"
+      end
+      field :categories do
+        label "In categories"
+      end
     end
+
+    edit do
+      field :title
+      field :content do
+        ckeditor do true end
+      end
+      field :categories
+    end
+
   end
 
 

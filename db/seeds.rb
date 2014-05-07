@@ -21,7 +21,7 @@ end
 
 users = %w[admin@gmail.com moderator@gmail.com author@gmail.com user@gmail.com]
 users.each do |user|
-  User.create(email: user, password: "12345678", password_confirmation: "12345678")
+  User.create(email: user, name: user, password: "12345678", password_confirmation: "12345678")
 end
 
 User.find_by_email(users.first).roles << Role.find_by_name(roles.first)
