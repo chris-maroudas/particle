@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: static_pages
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  content    :text
+#  slug       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class StaticPage < ActiveRecord::Base
   attr_accessible :content, :slug, :title
 

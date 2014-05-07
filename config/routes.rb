@@ -1,23 +1,12 @@
 Particle::Application.routes.draw do
 
-
-  
-
-  
-
-  
-
-  
-
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :static_pages
 
-
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :articles
-
 
   devise_for :users
 

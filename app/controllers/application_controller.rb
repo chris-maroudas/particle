@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :create_menu_items
 
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
@@ -13,7 +14,8 @@ class ApplicationController < ActionController::Base
 
 
   #def create_sidebar_data
-  #  @sidebar_posts = Post.featured
+  #  @sidebar_post3819313a
+  # Post.featured
   #end
 
 end
