@@ -1,17 +1,11 @@
 Particle::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
-  resources :static_pages
-
-  mount Ckeditor::Engine => '/ckeditor'
-
-  resources :articles
-
   devise_for :users
-
+  resources :static_pages
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :articles
   root :to => 'welcome#index'
-
   get "welcome/index"
 
   # The priority is based upon order of creation:

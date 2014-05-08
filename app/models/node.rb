@@ -18,4 +18,9 @@ class Node < ActiveRecord::Base
   belongs_to :menu
   belongs_to :node_type
 
+
+  validates :position,
+            numericality: { only_integer: true },
+            presence: true
+
 end
