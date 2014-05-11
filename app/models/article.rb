@@ -35,7 +35,6 @@ class Article < ActiveRecord::Base
 
 
   # Scopes
-
   scope :recent, -> do
     where(['published_at >= ?', 7.days.ago])
   end

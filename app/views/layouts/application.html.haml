@@ -26,9 +26,9 @@
 
       %hr
       %ul
-        -#- unless @menu.blank?
-        -#  - @menu.nodes.each do |node|
-        -#    %li= menu_link_for node
+        - unless @menu.blank?
+          - @menu.nodes.each do |node|
+            %li= menu_link_for node
     %hr
     .row
       .eight-columns
