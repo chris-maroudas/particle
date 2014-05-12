@@ -4,9 +4,9 @@ module ApplicationHelper
     parameters = { controller: node.node_type.controller, action: node.node_type.action }
     parameters.merge!(id: node.optional_field) unless node.optional_field.blank?
     begin
-      link = link_to node.name, url_for(parameters)
+      link_to node.name, url_for(parameters)
     rescue ActionController::RoutingError
-      link = "" # Devise namespace bugs the link. Fix coming.
+      "" # Devise namespace bugs the link. Fix coming.
     end
 
 
