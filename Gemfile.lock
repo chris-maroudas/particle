@@ -262,6 +262,10 @@ GEM
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
     slop (3.5.0)
+    smart_listing (1.0.0)
+      coffee-rails
+      kaminari (>= 0.15.1)
+      rails (>= 3.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -339,6 +343,7 @@ DEPENDENCIES
   rmagick
   sass-rails (~> 3.2.3)
   simple_form
+  smart_listing
   thin
   truncate_html
   uglifier (>= 1.0.3)

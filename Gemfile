@@ -44,6 +44,7 @@ gem 'html2haml'
 gem 'chartkick'
 gem 'groupdate'
 gem 'country_select'
+gem 'smart_listing'
 
 # Authorization / Authentication
 gem 'devise'

@@ -11,13 +11,15 @@ RailsAdmin.config do |config|
 
     list do
       field :title
-      field :content
       field :user do
         label "Written by"
       end
       field :categories do
         label "In categories"
       end
+      field :published
+      field :featured
+      field :commentable
     end
 
     edit do
@@ -26,6 +28,22 @@ RailsAdmin.config do |config|
         ckeditor do true end
       end
       field :categories
+      field :user
+      field :featured
+      field :published
+      field :commentable
+      field :assets
+    end
+
+  end
+
+
+  config.model Asset do
+
+    list do
+      field :title
+      field :image
+      field :description
     end
 
   end

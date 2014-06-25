@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140508223558) do
+ActiveRecord::Schema.define(:version => 20140625020609) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140508223558) do
     t.datetime "updated_at",                      :null => false
     t.boolean  "featured",     :default => false
     t.datetime "published_at"
+    t.boolean  "commentable",  :default => false
   end
 
   create_table "articles_categories", :id => false, :force => true do |t|
@@ -30,11 +31,20 @@ ActiveRecord::Schema.define(:version => 20140508223558) do
     t.integer "category_id"
   end
 
+  create_table "assetable_assets", :force => true do |t|
+    t.integer  "assetable_id"
+    t.integer  "asset_id"
+    t.string   "assetable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "assets", :force => true do |t|
     t.string   "title"
     t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
   end
 
   create_table "banner_images", :force => true do |t|
@@ -73,6 +83,12 @@ ActiveRecord::Schema.define(:version => 20140508223558) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "media_galleries", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "menus", :force => true do |t|
     t.string   "name"
@@ -132,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20140508223558) do
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "is_gallery"
   end
 
   create_table "users", :force => true do |t|

@@ -5,6 +5,7 @@ Particle::Application.routes.draw do
   resources :static_pages
   mount Ckeditor::Engine => '/ckeditor'
   resources :articles
+  resources :media_galleries, only: [:index]
   root :to => 'welcome#index'
   get "welcome/index"
 

@@ -1,0 +1,8 @@
+<ul class="clearing-thumbs" data-clearing>
+
+- @assets.each do |asset|
+  %li
+    %a{class: "th [radius]"}
+      = image_tag asset.image_url(:thumb)
+
+</ul>

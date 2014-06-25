@@ -8,6 +8,7 @@
 #  slug       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  is_gallery :boolean
 #
 
 class StaticPage < ActiveRecord::Base
