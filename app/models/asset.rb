@@ -30,4 +30,5 @@ class Asset < ActiveRecord::Base
   has_many :assetable_assets
   has_many :assetable_media_galleries, through: :assetable_assets, source: :assetable, source_type: 'MediaGallery'
   has_many :assetable_articles, through: :assetable_assets, source: :assetable, source_type: 'Article'
+  has_many :assetable_static_pages, through: :assetable_assets, source: :assetable, source_type: 'StaticPage'
 end

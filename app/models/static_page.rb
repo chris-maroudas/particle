@@ -16,4 +16,8 @@ class StaticPage < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  has_many :assetable_assets, as: :assetable
+  has_many :assets, through: :assetable_assets
+
 end

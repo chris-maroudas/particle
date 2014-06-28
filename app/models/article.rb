@@ -12,6 +12,7 @@
 #  updated_at   :datetime         not null
 #  featured     :boolean          default(FALSE)
 #  published_at :datetime
+#  commentable  :boolean          default(FALSE)
 #
 
 class Article < ActiveRecord::Base

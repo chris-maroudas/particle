@@ -17,11 +17,3 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
-
-function lets_get_the_fuck_out(name1, name2) {
-	var name_to_print = name1 + name2;
-	document.write(name_to_print);
-};
-
-lets_get_the_fuck_out("christofia", "zinovia");
