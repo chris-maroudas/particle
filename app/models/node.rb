@@ -22,6 +22,7 @@ class Node < ActiveRecord::Base
   # Validations
   validates :position,
             numericality: { only_integer: true },
+            inclusion: { in: 1..10 },
             presence: true
 
 end

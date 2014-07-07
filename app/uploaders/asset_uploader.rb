@@ -33,7 +33,7 @@ class AssetUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-     process :resize_to_limit => [50, 50]
+     process :resize_to_limit => [240, 135]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

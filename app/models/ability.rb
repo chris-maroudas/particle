@@ -12,8 +12,29 @@ class Ability
         can [:read, :create, :destroy], Ckeditor::AttachmentFile
 
         can :manage, :all
-      elsif user.role? :author
+      elsif user.role? :moderator
         can :manage, Article
+        can :manage, Asset
+        can :manage, User, { id: user.id }
+        can :manage, Menu
+        can :manage, Node
+        can :index, NodeType
+
+        can :access, :rails_admin   # grant access to rails_admin
+        can :dashboard              # grant access to the dashboard
+
+        can :access, :ckeditor   # needed to access Ckeditor filebrowser
+        can [:read, :create, :destroy], Ckeditor::Picture
+        can [:read, :create, :destroy], Ckeditor::AttachmentFile
+      elsif user.role? :author
+        can :manage, Article, { user_id: user.id }
+        can [:read, :create], Asset
+        can [:read, :create], StaticPage
+        can [:read, :create], Category
+        can :manage, User, { id: user.id }
+        can :read, Menu
+        can :manage, Node
+        can :index, NodeType
 
         can :access, :rails_admin   # grant access to rails_admin
         can :dashboard              # grant access to the dashboard

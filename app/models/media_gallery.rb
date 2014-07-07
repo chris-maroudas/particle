@@ -11,7 +11,15 @@
 class MediaGallery < ActiveRecord::Base
   attr_accessible :title, :asset_ids
 
-  has_many :assetable_assets, as: :assetable
+  has_many :assetable_assets, as: :assetable, dependent: :destroy
   has_many :assets, through: :assetable_assets
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 
 end

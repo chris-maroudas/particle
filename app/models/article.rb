@@ -23,7 +23,7 @@ class Article < ActiveRecord::Base
 
   # Associations
   belongs_to :user
-  has_many :assetable_assets, as: :assetable
+  has_many :assetable_assets, as: :assetable, dependent: :destroy
   has_many :assets, through: :assetable_assets
   has_and_belongs_to_many :categories, uniq: true
 

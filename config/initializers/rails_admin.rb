@@ -37,6 +37,12 @@ RailsAdmin.config do |config|
 
   end
 
+  config.model Banner do
+    list do
+      field :name
+      field :banner_images
+    end
+  end
 
   config.model Asset do
 
@@ -46,8 +52,41 @@ RailsAdmin.config do |config|
       field :description
     end
 
+    edit do
+      field :image
+      field :title
+      field :description
+    end
+
   end
 
+  config.model User do
+
+    list do
+      field :name
+      field :email
+    end
+  end
+
+  config.model NodeType do
+
+    list do
+      field :name
+      field :controller
+      field :action
+    end
+  end
+
+
+  config.model Node do
+
+    list do
+      field :position
+      field :name
+      field :node_type
+      field :menu
+    end
+  end
 
   ################  Global configuration  ################
 
