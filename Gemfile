@@ -51,6 +51,11 @@ gem 'devise'
 gem 'cancan'
 gem 'babosa'
 
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', require: false
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
