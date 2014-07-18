@@ -1,0 +1,26 @@
+// All main application CSS rules located here
+
+header {
+	height: 200px;
+	width: 100%;
+	background-color: #cccccc;
+
+	.logo {
+		height: 140px;
+	}
+
+	.menu {
+		height: 60px;
+		background-color: #e15382;
+		padding:20px 0;
+		ul {
+			list-style-type: none;
+			li {
+				font-family: 'Roboto Condensed', sans-serif;
+				display: block;
+				font-size: 20px;
+			}
+		}
+	}
+
+}

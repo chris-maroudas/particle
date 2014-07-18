@@ -30,7 +30,6 @@ class User < ActiveRecord::Base
   has_many :articles, dependent: :destroy
   belongs_to :role
 
-
   before_save :add_default_role
 
   def role?(role)
