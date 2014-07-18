@@ -17,6 +17,7 @@ gem 'annotate'
 gem 'awesome_print'
 gem 'pry'
 gem 'pry-rails'
+gem 'table_print'
 
 # Default
 gem 'friendly_id', "~> 4.0.10.1"

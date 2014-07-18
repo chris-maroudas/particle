@@ -65,6 +65,7 @@ RailsAdmin.config do |config|
     list do
       field :name
       field :email
+      field :role
     end
   end
 

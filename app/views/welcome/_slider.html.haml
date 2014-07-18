@@ -1,7 +1,6 @@
 <ul class="slider" data-orbit>
 
-- images = @banner.banner_images
-- images.each do |image|
+- @images.each do |image|
   %li
     = image_tag image.image_url(:banner)
     - unless image.caption.blank?

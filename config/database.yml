@@ -5,12 +5,10 @@
 #   gem 'sqlite3'
 
 development:
-  adapter: postgresql
-  host: 127.0.0.1
-  encoding: utf8
-  database: particle_dev
-  username: particle
-  password: dev
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 500
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

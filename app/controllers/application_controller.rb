@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
 
   #def create_sidebar_data
-  #  @sidebar_post3819313a
+  #  @sidebar_post
   # Post.featured
   #end
 
