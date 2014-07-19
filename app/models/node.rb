@@ -25,4 +25,6 @@ class Node < ActiveRecord::Base
             inclusion: { in: 1..10 },
             presence: true
 
+  default_scope order("position asc")
+
 end
