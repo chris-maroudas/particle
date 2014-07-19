@@ -1,9 +1,12 @@
 // All main application CSS rules located here
+$menu-font:	'Roboto Condensed', sans-serif;
+$menu-font-size: 20px;
+$menu-background-color: #e13782;
 
 header {
 	height: 200px;
 	width: 100%;
-	background-color: #cccccc;
+	background-color: #bcd0f4;
 
 	.logo {
 		height: 140px;
@@ -11,14 +14,14 @@ header {
 
 	.menu {
 		height: 60px;
-		background-color: #e15382;
+		background-color: $menu-background-color;
 		padding:20px 0;
 		ul {
 			list-style-type: none;
 			li {
-				font-family: 'Roboto Condensed', sans-serif;
+				font-family: $menu-font;
 				display: block;
-				font-size: 20px;
+				font-size: $menu-font-size;
 			}
 		}
 	}
