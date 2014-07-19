@@ -19,9 +19,16 @@ header {
 		ul {
 			list-style-type: none;
 			li {
-				font-family: $menu-font;
 				display: block;
-				font-size: $menu-font-size;
+
+				a {
+					color: #444;
+					font-family: $menu-font;
+					font-size: $menu-font-size;
+				}
+				&:visited {
+					color: #444;
+				}
 			}
 		}
 	}
