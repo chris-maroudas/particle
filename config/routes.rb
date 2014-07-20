@@ -1,5 +1,8 @@
 Particle::Application.routes.draw do
 
+  resources :contact_pages
+
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
   resources :static_pages
