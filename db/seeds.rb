@@ -30,6 +30,9 @@ StaticPage.create(title: "About us", content: "Choo chooo!")
 StaticPage.create(title: "Services", content: "Choo chooo!")
 
 NodeType.create(name: "Show a static page", controller: "static_pages", action: "show")
+NodeType.create(name: "Show contact page", controller: "contact_pages", action: "show")
 NodeType.create(name: "Display all articles", controller: "articles", action: "index")
 NodeType.create(name: "Show a media gallery", controller: "media_galleries", action: "show")
+NodeType.create(name: "Display home page", controller: "welcome", action: "index")
+
 Menu.create(name: "Main menu", position: 1)

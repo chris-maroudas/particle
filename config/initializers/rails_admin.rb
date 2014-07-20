@@ -82,7 +82,9 @@ RailsAdmin.config do |config|
   config.model Node do
 
     list do
-      field :position
+      field :position do
+        label "Appears in position"
+      end
       field :name
       field :node_type
       field :menu
