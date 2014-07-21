@@ -3,20 +3,6 @@ $menu-font:	'Roboto Condensed', sans-serif;
 $menu-font-size: 20px;
 $menu-background-color: #e13782;
 
-.social_bar {
-	span {
-		font-family: $menu-font;
-		color: #eeeeee;
-	}
-	a {
-		font-family: $menu-font;
-		color: #eeeeee;
-		&:visited {
-			color: #eeeeee;
-		}
-	}
-}
-
 header {
 	height: 200px;
 	width: 100%;
@@ -24,7 +10,18 @@ header {
 
 	.social_bar {
 		height: 30px;
-		background-color: #222;
+		background-color: #404040;
+		span {
+			font-family: $menu-font;
+			color: #eeeeee;
+		}
+		a {
+			font-family: $menu-font;
+			color: #eeeeee;
+			&:visited {
+				color: #eeeeee;
+			}
+		}
 	}
 
 	.logo {
@@ -67,6 +64,10 @@ header {
 		font-family: "Sorts Mill Goudy";
 		line-height: 1.5;
 	}
+
+	blockquote {
+		font-style: italic;
+	}
 }
 
 h3.article_title {
@@ -77,3 +78,12 @@ h3.article_title {
 	margin-bottom: 36px;
 }
 
+.article-details {
+	img.author-image {
+		border-radius: 100px;
+	}
+
+	p {
+		font-family: $menu-font;
+	}
+}
