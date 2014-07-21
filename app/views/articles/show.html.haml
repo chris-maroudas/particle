@@ -1,15 +1,19 @@
-%p
-  %b Title:
+%h3.article_title
   = @article.title
-%p
-  %b Content:
+.article_content
   = raw @article.content
 %p
   %b Published:
-  = @article.published
-%p
-  %b User:
-  = @article.user.email
+  = time_ago_in_words(@article.published_at) + " ago."
+
+%p.bio
+  %span By
+  %span.author
+    = @article.user.name.humanize
+  %span under
+  %span.category
+    - @article.categories.each do |category|
+      = category.name + " "
 
 = link_to 'Edit', edit_article_path(@article)
 \|

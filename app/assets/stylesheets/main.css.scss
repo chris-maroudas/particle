@@ -3,13 +3,32 @@ $menu-font:	'Roboto Condensed', sans-serif;
 $menu-font-size: 20px;
 $menu-background-color: #e13782;
 
+.social_bar {
+	span {
+		font-family: $menu-font;
+		color: #eeeeee;
+	}
+	a {
+		font-family: $menu-font;
+		color: #eeeeee;
+		&:visited {
+			color: #eeeeee;
+		}
+	}
+}
+
 header {
 	height: 200px;
 	width: 100%;
 	background-color: #bcd0f4;
 
+	.social_bar {
+		height: 30px;
+		background-color: #222;
+	}
+
 	.logo {
-		height: 140px;
+		height: 110px;
 	}
 
 	.menu {
@@ -20,7 +39,8 @@ header {
 			list-style-type: none;
 			li {
 				display: block;
-
+				float: left;
+				margin-right: 25px;
 				a {
 					color: #444;
 					font-family: $menu-font;
@@ -32,5 +52,28 @@ header {
 			}
 		}
 	}
-
 }
+
+.main_content {
+	border: 1px solid black;
+}
+
+.article_content {
+	font-size: 21px;
+	color: #353535;
+
+	p {
+		font-size: 20px;
+		font-family: "Sorts Mill Goudy";
+		line-height: 1.5;
+	}
+}
+
+h3.article_title {
+	font-family: "Sorts Mill Goudy";
+	color: #444444;
+	font-size: 36px;
+	text-transform: capitalize;
+	margin-bottom: 36px;
+}
+

@@ -7,39 +7,41 @@
 
     %title= content_for?(:title) ? yield(:title) : "Particle"
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tag
 
   %body
     %header
+      .social_bar
+        .row
+          .medium-offset-6.medium-6.columns
+            - if user_signed_in?
+              %span
+                Logged as:
+                = current_user.name.humanize
+              |
+              = link_to "Log out!", destroy_user_session_path, method: :delete
+            - else
+              = link_to "Sign up"
+              |
+              = link_to "Log in", sign_in_path
       .logo
       .menu
-        %ul
-          - unless @menu.blank?
-            - @menu.nodes.each do |node|
-              %li= menu_link_for node
-    .row
-      %h1
-        Particle
-      %hr
-        - if user_signed_in?
-          You're logged in as:
-          = current_user.email if user_signed_in?
-          = link_to "Log out!", destroy_user_session_path, method: :delete
-        - else
-          = link_to "Sign up!", new_user_registration_path
-          = link_to "Sign in", new_user_session_path
-
-      %hr
-
+        .row
+          %ul
+            - unless @menu.blank?
+              - @menu.nodes.each do |node|
+                %li= menu_link_for node
     %hr
     .row
-      .eight-columns
+      .medium-8.columns
         %p#notice= notice
         %p#alert= alert
-    .row.content
-      .twelve-columns
+    .row
+      .medium-8.columns
         = yield
-
+      .medium-offset-1.medium-3.columns
+        %h5 Sidebar
     = javascript_include_tag "application"
