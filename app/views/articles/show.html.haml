@@ -1,7 +1,13 @@
+%p.article-category
+  - @article.categories.each do |category|
+    %span.category
+      = category.name
+
 %h3.article_title
   = @article.title
 %p.article-preview
   = @article.preview
+
 
 .article_content
   = raw @article.content

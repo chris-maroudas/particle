@@ -87,7 +87,24 @@ header {
 	}
 
 	blockquote {
+		overflow: auto;
 		font-style: italic;
+		border-left: 0;
+		overflow: auto;
+
+		p {
+			width: 80%;
+			text-align: right;
+			font-size: 26px;
+			font-family: 'Roboto Condensed';
+			font-family: 'Cordo';
+			border-bottom: 2px solid #555;
+			border-top: 4px solid #555;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			float: right;
+			color: #555;
+		}
 	}
 }
 
@@ -110,7 +127,7 @@ p.article-preview {
 	font-size: 18px;
 	text-align: center;
 	font-style: italic;
-	margin-bottom: 48px;
+	margin-bottom: 60px;
 }
 
 .article-details {
@@ -133,3 +150,17 @@ p.article-preview {
 	position: relative;
 }
 
+.article-category {
+	margin-bottom: 45px;
+	margin-top: 15px;
+	span.category {
+		padding: 10px;
+		background-color: #ff3878;
+		color: white;
+		font-family: 'Roboto Condensed';
+		font-weight: 300;
+		font-size: 16px;
+		margin-bottom: 90px;
+		margin-right: 5px;
+	}
+}
