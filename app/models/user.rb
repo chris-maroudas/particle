@@ -16,6 +16,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string(255)
+#  role_id                :integer
+#  bio                    :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -28,7 +30,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :article_ids, :role_id, :bio, :asset_ids
 
   has_many :articles, dependent: :destroy
-  has_many :assetable_assets, as: :assetable
+  has_many :assetable_assets, as: :assetable, dependent: :destroy
   has_many :assets, through: :assetable_assets
   belongs_to :role
 

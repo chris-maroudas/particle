@@ -25,6 +25,3 @@ class ArticlesController < ApplicationController
   end
 
 end
-
-
-

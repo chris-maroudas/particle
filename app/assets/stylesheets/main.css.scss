@@ -1,19 +1,31 @@
 // All main application CSS rules located here
 $menu-font:	'Roboto Condensed', sans-serif;
-$menu-font-size: 20px;
-$menu-background-color: #e13782;
+$menu-font-size: 22px;
+$menu-background-color: #282828;
+
+body {
+//	background-image: url('/assets/background2.jpg');
+//	background-size: cover;
+//	background-attachment: fixed;
+}
+
+.main_container {
+	.row {
+		background-color: RGBA(255,255,255,1);
+	}
+}
 
 header {
-	height: 200px;
+	height: 205px;
 	width: 100%;
 	background-color: #bcd0f4;
 
 	.social_bar {
-		height: 30px;
-		background-color: #404040;
+		height: 133px;
+		background-color: #fff;
 		span {
 			font-family: $menu-font;
-			color: #eeeeee;
+			color: #111;
 		}
 		a {
 			font-family: $menu-font;
@@ -24,28 +36,36 @@ header {
 		}
 	}
 
-	.logo {
-		height: 110px;
-	}
-
 	.menu {
-		height: 60px;
+		height: 72px;
 		background-color: $menu-background-color;
-		padding:20px 0;
 		ul {
 			list-style-type: none;
+			margin-left: 40px;
+			padding-top: 20px;
+
 			li {
 				display: block;
 				float: left;
-				margin-right: 25px;
+				margin-right: 40px;
 				a {
-					color: #444;
-					font-family: $menu-font;
+					color: #ccc;
+					font-family: 'Droid Sans';
 					font-size: $menu-font-size;
 					font-weight: 300;
-				}
-				&:visited {
-					color: #444;
+					text-transform: uppercase;
+					&:visited {
+						color: #ccc;
+					}
+					&:hover {
+						background-color: transparent;
+						color: #fff;
+						-webkit-transition: all 0.3s ease-in-out ;
+						-moz-transition: all 0.3s ease-in-out ;
+						-ms-transition: all 0.3s ease-in-out ;
+						-o-transition: all 0.3s ease-in-out ;
+						transition: all 0.3s ease-in-out ;
+					}
 				}
 			}
 		}
@@ -73,10 +93,23 @@ header {
 
 h3.article_title {
 	font-family: "Sorts Mill Goudy";
+	font-family: "Georgia";
 	color: #444444;
-	font-size: 36px;
-	text-transform: capitalize;
-	margin-bottom: 36px;
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+	text-align: center;
+	border-bottom: 1px solid #aaa;
+	padding-bottom: 12px;
+}
+
+p.article-preview {
+	font-family: "Sorts Mill Goudy";
+	font-family: "Georgia";
+	font-size: 16px;
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 48px;
 }
 
 .article-details {
@@ -88,3 +121,14 @@ h3.article_title {
 		font-family: $menu-font;
 	}
 }
+
+
+#home {
+	background: url("/assets/background2.jpg") 50% 0 repeat fixed;
+	min-height: 1000px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1920px;
+	position: relative;
+}
+

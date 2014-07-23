@@ -24,6 +24,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :title
+      field :preview
       field :content do
         ckeditor do true end
       end

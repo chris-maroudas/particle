@@ -13,10 +13,11 @@
 #  featured     :boolean          default(FALSE)
 #  published_at :datetime
 #  commentable  :boolean          default(FALSE)
+#  preview      :string(255)
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at, :commentable, :asset_ids
+  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at, :commentable, :asset_ids, :preview
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -33,6 +34,10 @@ class Article < ActiveRecord::Base
             presence: true,
             uniqueness: true,
             length: { in: 6..180 }
+
+  validates :preview,
+            presence: true,
+            length: { in: 6..255 }
 
   validates :content,
             presence: true,

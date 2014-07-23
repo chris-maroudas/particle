@@ -27,21 +27,24 @@
               = link_to "Sign up"
               |
               = link_to "Log in", sign_in_path
-      .logo
       .menu
         .row
           %ul
             - unless @menu.blank?
               - @menu.nodes.each do |node|
                 %li= menu_link_for node
-    %hr
-    .row
-      .medium-8.columns
-        %p#notice= notice
-        %p#alert= alert
-    .row
-      .medium-8.columns
-        = yield
-      .medium-offset-1.medium-3.columns
-        %h5 Sidebar
-    = javascript_include_tag "application"
+
+
+    %section{'data-type' => "background", "data-speed" => "20", class: "pages", id: "home"}
+      .main_container
+        .row
+          .medium-8.columns
+            %p#notice= notice
+            %p#alert= alert
+        .row
+          .medium-8.columns
+            = yield
+          .medium-offset-1.medium-3.columns
+            %h5 Sidebar
+
+      = javascript_include_tag "application"

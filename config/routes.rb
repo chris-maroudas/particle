@@ -1,12 +1,12 @@
 Particle::Application.routes.draw do
-
+  mount Ckeditor::Engine => '/ckeditor'
   resources :contact_pages
 
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users
   resources :static_pages
-  mount Ckeditor::Engine => '/ckeditor'
   resources :articles
   resources :media_galleries, only: [:show]
   root :to => 'welcome#index'
