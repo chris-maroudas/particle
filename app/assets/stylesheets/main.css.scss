@@ -50,7 +50,7 @@ header {
 				margin-right: 40px;
 				a {
 					color: #ccc;
-					font-family: 'Droid Sans';
+					font-family: 'Roboto Condensed';
 					font-size: $menu-font-size;
 					font-weight: 300;
 					text-transform: uppercase;
@@ -92,21 +92,22 @@ header {
 }
 
 h3.article_title {
-	font-family: "Sorts Mill Goudy";
-	font-family: "Georgia";
-	color: #444444;
-	font-size: 40px;
+	font-family: "Cordo";
+	font-family: "Roboto Condensed";
+	color: #484848;
+	font-size: 48px;
 	text-transform: uppercase;
 	margin-bottom: 24px;
 	text-align: center;
 	border-bottom: 1px solid #aaa;
 	padding-bottom: 12px;
+	font-weight: 700;
 }
 
 p.article-preview {
 	font-family: "Sorts Mill Goudy";
-	font-family: "Georgia";
-	font-size: 16px;
+	font-family: "Cordo";
+	font-size: 18px;
 	text-align: center;
 	font-style: italic;
 	margin-bottom: 48px;
