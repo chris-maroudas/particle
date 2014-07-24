@@ -17,24 +17,7 @@
 
 .article_content
   = raw @article.content
-%p
-  %b Published:
-  = time_ago_in_words(@article.published_at) + " ago."
 
-.row.article-details
-  .medium-3.columns
-    = image_tag @article.user.assets.first.image_url(:thumb), class: "author-image"
-  .medium-9.columns
-    %p.generic_details
-      %span By
-      %span.author
-        = @article.user.name.humanize
-      %span under
-      %span.category
-        - @article.categories.each do |category|
-          = category.name + " "
-    %p.author_bio
-      = @article.user.bio unless @article.user.bio.blank?
 
 
 = link_to 'Back', articles_path
