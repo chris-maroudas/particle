@@ -11,8 +11,9 @@
 %h3.article_title
   = @article.title
 %p.article-preview
-  = @article.preview
+  = @article.preview.capitalize
 
+= image_tag @article.image_url(:full), class: "article-image"
 
 .article_content
   = raw @article.content

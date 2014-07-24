@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :create_menu_items
+  before_filter :create_menu_items, :create_sidebar_data
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
@@ -12,9 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
 
-  #def create_sidebar_data
-  #  @sidebar_post
-  # Post.featured
-  #end
+  def create_sidebar_data
+    @side_articles = Article.recent
+  end
 
 end

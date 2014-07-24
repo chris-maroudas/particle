@@ -20,6 +20,7 @@ RailsAdmin.config do |config|
       field :published
       field :featured
       field :commentable
+      field :image
     end
 
     edit do
@@ -30,6 +31,7 @@ RailsAdmin.config do |config|
       end
       field :categories
       field :user
+      field :image
       field :featured
       field :published
       field :commentable

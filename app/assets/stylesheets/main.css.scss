@@ -95,7 +95,7 @@ header {
 		p {
 			width: 80%;
 			text-align: right;
-			font-size: 26px;
+			font-size: 24px;
 			font-family: 'Roboto Condensed';
 			font-family: 'Cordo';
 			border-bottom: 2px solid #555;
@@ -112,7 +112,7 @@ p.chapter-title {
 	font-family: "Sorts Mill Goudy";
 	font-size: 16px;
 	text-align: center;
-	color: #999;
+	color: #888;
 }
 
 h3.article_title {
@@ -120,11 +120,12 @@ h3.article_title {
 	font-family: "Roboto Condensed";
 	color: #484848;
 	font-size: 48px;
+	line-height: 48px;
 	text-transform: uppercase;
 	margin-bottom: 24px;
 	text-align: center;
 	border-bottom: 1px solid #aaa;
-	padding-bottom: 12px;
+	padding-bottom: 24px;
 	font-weight: 700;
 }
 
@@ -135,6 +136,7 @@ p.article-preview {
 	text-align: center;
 	font-style: italic;
 	margin-bottom: 60px;
+	color: #666;
 }
 
 .article-details {
@@ -186,4 +188,39 @@ p.article-preview {
 		margin-top: 30px;
 	}
 
+}
+
+img.article-image {
+	margin-bottom: 48px;
+}
+
+
+.sidebar {
+	border-left: 1px solid #aaa;
+}
+
+.sidebar-article {
+	margin-bottom: 30px;
+	border-bottom: 1px solid #aaa;
+	h4 {
+		font-family: "Roboto Condensed";
+		font-weight: 300;
+		color: #333;
+		font-size: 20px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: "Condo";
+		text-align: center;
+		font-size: 16px;
+		font-style: italic;
+		color: #666;
+	}
+	p.time {
+		font-size: 14px;
+	}
+	img {
+		 margin-bottom: 15px;
+	}
 }

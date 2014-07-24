@@ -17,10 +17,12 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at, :commentable, :asset_ids, :preview
+  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at, :commentable, :asset_ids, :preview, :image, :remove_image, :image_cache
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  mount_uploader :image, ArticlesUploader
 
   # Associations
   belongs_to :user
@@ -50,7 +52,7 @@ class Article < ActiveRecord::Base
 
   # Scopes
   scope :recent, -> do
-    where(['published_at >= ?', 7.days.ago])
+    where(['published_at >= ?', 30.days.ago])
   end
   scope :published, where(published: true)
   scope :featured, where(featured: true)
