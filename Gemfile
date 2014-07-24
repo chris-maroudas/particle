@@ -45,6 +45,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'country_select'
 gem 'smart_listing'
+gem 'numbers_and_words'
 
 # Authorization / Authentication
 gem 'devise'

@@ -1,8 +1,13 @@
-%p.article-category
-  - @article.categories.each do |category|
-    %span.category
-      = category.name
+.article-data
+  %p.article-category
+    - @article.categories.each do |category|
+      %span.category
+        = category.name
+  %p.author
+    = " by #{@article.user.name.capitalize}"
 
+%p.chapter-title
+  = "chapter #{Article.all.count.to_words}"
 %h3.article_title
   = @article.title
 %p.article-preview

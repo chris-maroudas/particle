@@ -100,12 +100,19 @@ header {
 			font-family: 'Cordo';
 			border-bottom: 2px solid #555;
 			border-top: 4px solid #555;
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-top: 15px;
+			padding-bottom: 15px;
 			float: right;
 			color: #555;
 		}
 	}
+}
+
+p.chapter-title {
+	font-family: "Sorts Mill Goudy";
+	font-size: 16px;
+	text-align: center;
+	color: #999;
 }
 
 h3.article_title {
@@ -150,17 +157,33 @@ p.article-preview {
 	position: relative;
 }
 
-.article-category {
-	margin-bottom: 45px;
-	margin-top: 15px;
-	span.category {
-		padding: 10px;
-		background-color: #ff3878;
-		color: white;
-		font-family: 'Roboto Condensed';
-		font-weight: 300;
-		font-size: 16px;
-		margin-bottom: 90px;
-		margin-right: 5px;
+.article-data {
+	overflow: auto;
+	p.article-category {
+		float: left;
+		width: 66%;
+		margin-bottom: 45px;
+		margin-top: 15px;
+		span.category {
+			padding: 10px;
+			background-color: #ff3878;
+			color: white;
+			font-family: 'Roboto Condensed';
+			font-weight: 300;
+			font-size: 16px;
+			margin-bottom: 90px;
+			margin-right: 5px;
+		}
 	}
+	p.author {
+		float: right;
+		font-family: 'Cordo';
+		font-style: italic;
+		font-size: 14px;
+		color: #888;
+		width: 33;
+		text-transform: capitalize;
+		margin-top: 30px;
+	}
+
 }
