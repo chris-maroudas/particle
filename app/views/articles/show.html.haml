@@ -18,9 +18,12 @@
 .article_content
   = raw @article.content
 
+.article-author
+  .author-image
+    = image_tag @article.user.assets.first.image_url(:thumb)
+  %p.author-bio
+    = @article.user.bio
 
-
-= link_to 'Back', articles_path
 
 - if @article.commentable?
   = render 'shared/comment'

@@ -213,3 +213,27 @@ img.article-image {
 		 margin-bottom: 15px;
 	}
 }
+
+.article-author {
+	margin-top: 40px;
+	overflow: auto;
+	.author-image {
+		float: left;
+		width: 140px;
+		img {
+			border-radius: 100px;
+		}
+	}
+	.author-bio {
+		width: 430px;
+		background-color: #f8f8f8 ;
+		float: right;
+		color: #444;
+		font-size: 16px;
+		font-family: "Roboto Condensed";
+		font-family: "Cordo";
+		font-style: italic;
+		font-weight: 300;
+		padding: 20px;
+	}
+}
