@@ -4,9 +4,6 @@ $menu-font-size: 22px;
 $menu-background-color: #282828;
 
 body {
-//	background-image: url('/assets/background2.jpg');
-//	background-size: cover;
-//	background-attachment: fixed;
 }
 
 .main_container {
@@ -43,11 +40,12 @@ header {
 			list-style-type: none;
 			margin-left: 40px;
 			padding-top: 20px;
-
+			width: 400px;
+			float: left;
 			li {
 				display: block;
 				float: left;
-				margin-right: 40px;
+				margin-right: 30px;
 				a {
 					color: #ccc;
 					font-family: 'Roboto Condensed';
@@ -67,6 +65,44 @@ header {
 						transition: all 0.3s ease-in-out ;
 					}
 				}
+			}
+		}
+		.search-bar {
+			float: right;
+			width: 201px;
+			overflow: auto;
+			padding-top: 15px;
+			input {
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px dotted #aaa;
+				width: 130px;
+				float: right;
+				box-shadow: none;
+				outline: none;
+				color: #777;
+				font-family: "Roboto Condensed";
+				font-size: 14px;
+				font-weight: 300;
+				padding-bottom: 1px;
+				transition: all 0.3s ease-in-out;
+				&:focus {
+					width: 200px;
+					outline: none;
+					box-shadow: none;
+					color: #999;
+					font-family: "Roboto Condensed";
+					font-size: 14px;
+					font-weight: 300;
+					padding-bottom: 1px;
+				}
+			}
+			input[type=submit] {
+				display: none;
+				float: right;
+				border: none;
+				width: 1px;
+				color: transparent;
 			}
 		}
 	}
@@ -98,8 +134,8 @@ header {
 			font-size: 24px;
 			font-family: 'Roboto Condensed';
 			font-family: 'Cordo';
-			border-bottom: 2px solid #666;
-			border-top: 4px solid #666;
+			border-bottom: 1px solid #777;
+			border-top: 3px solid #777;
 			padding-top: 15px;
 			padding-bottom: 15px;
 			float: right;
@@ -109,8 +145,9 @@ header {
 }
 
 p.chapter-title {
+	font-family: "Allura";
 	font-family: "Sorts Mill Goudy";
-	font-size: 16px;
+	font-size: 15px;
 	text-align: center;
 	color: #888;
 }
@@ -130,7 +167,6 @@ h3.article_title {
 }
 
 p.article-preview {
-	font-family: "Sorts Mill Goudy";
 	font-family: "Cordo";
 	font-size: 18px;
 	text-align: center;
@@ -140,7 +176,7 @@ p.article-preview {
 }
 
 #home {
-	background: url("/assets/background2.jpg") 50% 0 repeat fixed;
+	background: url("/assets/background3.jpg") 50% 0 repeat fixed;
 	min-height: 1000px;
 	margin: 0 auto;
 	width: 100%;
@@ -155,7 +191,7 @@ p.article-preview {
 		width: 66%;
 		margin-bottom: 45px;
 		margin-top: 15px;
-		span.category {
+		a.category {
 			padding: 10px;
 			background-color: #ff3878;
 			color: white;
@@ -186,6 +222,18 @@ img.article-image {
 
 .sidebar {
 	border-left: 1px solid #aaa;
+
+	h5 {
+		text-align: center;
+		font-family: "Roboto Condensed";
+		font-size: 34px;
+		font-weight: 400;
+		font-style: italic;
+		text-transform: capitalize;
+		color: #666;
+		margin-bottom: 40px;
+		margin-top: 60px;
+	}
 }
 
 .sidebar-article {

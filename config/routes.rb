@@ -1,7 +1,9 @@
 Particle::Application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
-  resources :contact_pages
+  get "search/show"
 
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :contact_pages, only: [:show]
+  resources :categories, only: [:show, :index]
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

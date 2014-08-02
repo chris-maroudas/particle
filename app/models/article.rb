@@ -46,13 +46,12 @@ class Article < ActiveRecord::Base
             length: { in: 20..40000 }
 
   validates_presence_of :categories, :user
-
   validate :check_words_number
 
 
   # Scopes
   scope :recent, -> do
-    where(['published_at >= ?', 30.days.ago])
+    where(['published_at >= ?', 14.days.ago])
   end
   scope :published, where(published: true)
   scope :featured, where(featured: true)
@@ -63,6 +62,16 @@ class Article < ActiveRecord::Base
 
   # Methods
 
+  # Returns an array with 10 random articles from the categories the article belongs to
+  def related_articles
+    articles = []
+    self.categories.each do |category|
+      articles << category.articles
+    end
+    articles.flatten.uniq.select { |article| article != self }.sample(10)
+  end
+
+  # Custom validation that checks if total number of words are above 20
   def check_words_number
     unless content.blank?
       words_number = content.split(" ").count
@@ -72,12 +81,15 @@ class Article < ActiveRecord::Base
     end
   end
 
+  # Stores the time the published boolean changed from false to true(excluding the opposite)
   def check_if_published_changed
     self.published_at = Time.now if (("published".in? self.changed) && (published))
   end
 
+  # Strips empty space from strings
   def strip_empty_space
     self.title = title.strip if self.title
+    self.preview = preview.strip if self.preview
     self.content = content.strip if self.content
   end
 

@@ -1,8 +1,7 @@
 .article-data
   %p.article-category
     - @article.categories.each do |category|
-      %span.category
-        = category.name
+      = link_to category.name, category, class: "category"
   %p.author
     = " by #{@article.user.name.capitalize}"
 
@@ -17,6 +16,9 @@
 
 .article_content
   = raw @article.content
+
+.social-icons
+  = tweet_button(count: :none, text: truncate(@article.preview, length: 60, separator: " "), via: :chris_maroudas)
 
 .article-author
   .author-image
