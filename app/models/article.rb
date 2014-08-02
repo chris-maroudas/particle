@@ -14,6 +14,7 @@
 #  published_at :datetime
 #  commentable  :boolean          default(FALSE)
 #  preview      :string(255)
+#  image        :string(255)
 #
 
 class Article < ActiveRecord::Base
