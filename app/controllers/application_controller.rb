@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   def create_sidebar_data
     @side_articles = Article.recent
+    @categories = Category.all
   end
 
 end
