@@ -50,14 +50,6 @@
           .medium-8.columns
             = yield
           .medium-4.columns.sidebar
-            %h5
-              Recent articles
-            - @side_articles.each do |side_article|
-              .sidebar-article
-                %h4= side_article.title
-                %p= side_article.preview.capitalize
-                = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
-                %p.time= time_ago_in_words(side_article.published_at) + " ago"
 
             %h5
               Related articles
@@ -68,6 +60,15 @@
                   %p= side_article.preview.capitalize
                   = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
                   %p.time= time_ago_in_words(side_article.published_at) + " ago"
+
+            %h5
+              Recent articles
+            - @side_articles.each do |side_article|
+              .sidebar-article
+                %h4= side_article.title
+                %p= side_article.preview.capitalize
+                = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
+                %p.time= time_ago_in_words(side_article.published_at) + " ago"
 
             %h5
               Categories

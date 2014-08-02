@@ -51,10 +51,10 @@ class Article < ActiveRecord::Base
 
   # Scopes
   scope :recent, -> do
-    where(['published_at >= ?', 14.days.ago])
+    where(['published_at >= ?', 14.days.ago]).order("published_at DESC")
   end
-  scope :published, where(published: true)
-  scope :featured, where(featured: true)
+  scope :published, where(published: true).order("published_at DESC")
+  scope :featured, where(featured: true). order("published_at DESC")
 
   # Callbacks
   before_validation :strip_empty_space
@@ -62,13 +62,32 @@ class Article < ActiveRecord::Base
 
   # Methods
 
-  # Returns an array with 10 random articles from the categories the article belongs to
-  def related_articles
-    articles = []
-    self.categories.each do |category|
-      articles << category.articles
+  # Returns the 4 most related articles according to how many common categories
+  # they share together
+  def get_most_related_articles
+    rated_articles = {}
+    unless remaining_articles.blank?
+      remaining_articles.each do |article|
+        rated_articles[article] = compute_score_for_related_article(article)
+      end
     end
-    articles.flatten.uniq.select { |article| article != self }.sample(10)
+    rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..3]
+  end
+
+  def compute_score_for_related_article(article)
+    score = 0
+    unless article.categories.blank?
+      article.categories.each do |category|
+        if category.in? categories
+          score += 1
+        end
+      end
+    end
+    score
+  end
+
+  def remaining_articles
+    Article.all.reject { |article| article == self }
   end
 
   # Custom validation that checks if total number of words are above 20
