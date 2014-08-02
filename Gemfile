@@ -46,6 +46,7 @@ gem 'groupdate'
 gem 'country_select'
 gem 'smart_listing'
 gem 'numbers_and_words'
+gem "social-buttons"
 
 # Authorization / Authentication
 gem 'devise'
