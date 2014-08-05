@@ -6,7 +6,7 @@
     = " by #{@article.user.name.capitalize}"
 
 %p.chapter-title
-  = "chapter #{Article.all.count.to_words}"
+  = "chapter #{@article.compute_chapter}"
 %h3.article_title
   = @article.title
 %p.article-preview
