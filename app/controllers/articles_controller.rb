@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @articles = Article.all
+    @articles = Article.published
 
     respond_to do |format|
       format.html # index.html.erb
