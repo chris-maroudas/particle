@@ -20,4 +20,10 @@ class Category < ActiveRecord::Base
   validates :name,
             presence: true,
             length: { in: 1..60 }
+
+  # Returns all categories, sorted by the number of articles each one has
+  def self.sorted_by_articles_number
+    all.sort_by { |category| category.articles.count }.reverse
+  end
+
 end
