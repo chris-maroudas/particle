@@ -47,6 +47,7 @@ gem 'country_select'
 gem 'smart_listing'
 gem 'numbers_and_words'
 gem "social-buttons"
+gem 'acts_as_indexed'
 
 # Authorization / Authentication
 gem 'devise'

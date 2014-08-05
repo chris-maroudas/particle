@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    acts_as_indexed (0.8.3)
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     annotate (2.6.3)
@@ -324,6 +325,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_indexed
   ancestry
   annotate
   awesome_print
