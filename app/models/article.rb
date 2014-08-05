@@ -78,21 +78,7 @@ class Article < ActiveRecord::Base
     rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..(limit -1)]
   end
 
-  def compute_score_for_related_article(article)
-    score = 0
-    unless article.categories.blank?
-      article.categories.each do |category|
-        if category.in? categories
-          score += 1
-        end
-      end
-    end
-    score
-  end
 
-  def remaining_articles
-    Article.published.reject { |article| article == self }
-  end
 
   # Custom validation that checks if total number of words are above 20
   def check_words_number
@@ -118,8 +104,31 @@ class Article < ActiveRecord::Base
     self.content = content.strip if self.content
   end
 
+  def compute_chapter
+    Article.published.reverse.index(self) + 1
+  end
+
   def should_generate_new_friendly_id?
     new_record?
+  end
+
+
+  private
+
+  def compute_score_for_related_article(article)
+    score = 0
+    unless article.categories.blank?
+      article.categories.each do |category|
+        if category.in? categories
+          score += 1
+        end
+      end
+    end
+    score
+  end
+
+  def remaining_articles
+    Article.published.reject { |article| article == self }
   end
 
 end
