@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @related_articles = @article.get_most_related_articles
+    @related_articles = @article.get_most_related_articles(3)
 
     respond_to do |format|
       format.html # show.html.erb

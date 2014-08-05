@@ -66,16 +66,16 @@ class Article < ActiveRecord::Base
 
   # Methods
 
-  # Returns the 4 most related articles according to how many common categories
+  # Returns the most related articles according to how many common categories
   # they share together
-  def get_most_related_articles
+  def get_most_related_articles(limit)
     rated_articles = {}
     unless remaining_articles.blank?
       remaining_articles.each do |article|
         rated_articles[article] = compute_score_for_related_article(article)
       end
     end
-    rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..3]
+    rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..(limit -1)]
   end
 
   def compute_score_for_related_article(article)
@@ -91,7 +91,7 @@ class Article < ActiveRecord::Base
   end
 
   def remaining_articles
-    Article.all.reject { |article| article == self }
+    Article.published.reject { |article| article == self }
   end
 
   # Custom validation that checks if total number of words are above 20
