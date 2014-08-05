@@ -55,7 +55,7 @@ class Article < ActiveRecord::Base
 
   # Scopes
   scope :recent, -> do
-    where(['published_at >= ?', 14.days.ago]).order("published_at DESC")
+    where(['published_at >= ?', 14.days.ago]).order("published_at DESC").limit(3)
   end
   scope :published, where(published: true).order("published_at DESC")
   scope :featured, where(featured: true, published: true). order("published_at DESC")
@@ -105,7 +105,9 @@ class Article < ActiveRecord::Base
   end
 
   def compute_chapter
-    Article.published.reverse.index(self) + 1
+    unless Article.published.blank?
+      Article.published.reverse.index(self) + 1
+    end
   end
 
   def should_generate_new_friendly_id?
