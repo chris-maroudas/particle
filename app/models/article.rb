@@ -23,6 +23,9 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  # Full text search on current fields
+  acts_as_indexed :fields => [:title, :preview, :content]
+
   mount_uploader :image, ArticlesUploader
 
   # Associations
@@ -55,7 +58,7 @@ class Article < ActiveRecord::Base
     where(['published_at >= ?', 14.days.ago]).order("published_at DESC")
   end
   scope :published, where(published: true).order("published_at DESC")
-  scope :featured, where(featured: true). order("published_at DESC")
+  scope :featured, where(featured: true, published: true). order("published_at DESC")
 
   # Callbacks
   before_validation :strip_empty_space
@@ -101,9 +104,11 @@ class Article < ActiveRecord::Base
     end
   end
 
-  # Stores the time the published boolean changed from false to true(excluding the opposite)
+  # If an article is published, store the current time, else set it to nil
   def check_if_published_changed
-    self.published_at = Time.now if (("published".in? self.changed) && (published))
+    if "published".in? self.changed
+      self.published_at = published ? Time.now : nil
+    end
   end
 
   # Strips empty space from strings
