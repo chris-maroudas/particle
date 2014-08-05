@@ -36,7 +36,7 @@
                 %li= menu_link_for node
           .search-bar
             = form_tag(search_show_path, method: :get) do
-              = text_field_tag :tag, nil, placeholder: "Search here"
+              = text_field_tag :query, nil, placeholder: "Search here"
               = submit_tag "Search"
 
 
@@ -51,15 +51,16 @@
             = yield
           .medium-4.columns.sidebar
 
-            %h5
-              Related articles
-            - if @related_articles
-              - @related_articles.each do |side_article|
-                .sidebar-article
-                  %h4= side_article.title
-                  %p= side_article.preview.capitalize
-                  = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
-                  %p.time= time_ago_in_words(side_article.published_at) + " ago"
+            - if @article.present?
+              %h5
+                Related articles
+              - if @related_articles
+                - @related_articles.each do |side_article|
+                  .sidebar-article
+                    %h4= side_article.title
+                    %p= side_article.preview.capitalize
+                    = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
+                    %p.time= time_ago_in_words(side_article.published_at) + " ago"
 
             %h5
               Recent articles
@@ -73,6 +74,6 @@
             %h5
               Categories
             - @categories.each do |category|
-              = link_to category.name.titleize + "(#{category.articles.count})", category
+              = link_to category.name.titleize + "(#{category.articles.count})", category, class: "sidebar-category-link"
 
       = javascript_include_tag "application"
