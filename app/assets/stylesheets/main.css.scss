@@ -234,6 +234,24 @@ img.article-image {
 		margin-bottom: 40px;
 		margin-top: 60px;
 	}
+
+	.sidebar-category-link {
+		display: block;
+		margin-bottom: 15px;
+		padding: 5px 2px;
+		color: #555;
+		font-family: "Sorts Mill Goudy";
+		font-size: 20px;
+		text-align: center;
+		&:visited {
+			color: #555;
+		}
+		&:hover {
+			background-color: transparent;
+			color: #222;
+			transition: 0.3s all ease-in-out;
+		}
+	}
 }
 
 .sidebar-article {
