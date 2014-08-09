@@ -26,6 +26,14 @@
   %p.author-bio
     = @article.user.bio
 
+- if @article.rateable?
+  %h5.rating Average rating:
+  = @article.average_rating
+
+  = simple_form_for @rating do |f|
+    = f.input :score, input_html: { min: Rating.minimum, max: Rating.maximum}
+    = f.input :article_id, label: false, input_html: { value: @article.id, type: :hidden }
+    = f.submit
 
 - if @article.commentable?
   = render 'shared/comment'
