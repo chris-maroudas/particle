@@ -1,4 +1,6 @@
 Particle::Application.routes.draw do
+  get "ratings/create"
+
   get "search/show"
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -11,7 +13,8 @@ Particle::Application.routes.draw do
   resources :static_pages
   resources :articles
   resources :media_galleries, only: [:show]
-  root :to => 'welcome#index'
+  resources :ratings, only: ["create"]
+  root :to => 'articles#index'
   get "welcome/index"
 
   # The priority is based upon order of creation:

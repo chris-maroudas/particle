@@ -14,12 +14,10 @@ RailsAdmin.config do |config|
       field :user do
         label "Written by"
       end
-      field :categories do
-        label "In categories"
-      end
       field :published
       field :featured
       field :commentable
+      field :rateable
       field :image
     end
 
@@ -35,6 +33,7 @@ RailsAdmin.config do |config|
       field :featured
       field :published
       field :commentable
+      field :rateable
       field :assets
     end
 
