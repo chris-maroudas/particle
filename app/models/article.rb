@@ -18,7 +18,9 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at, :commentable, :asset_ids, :preview, :image, :remove_image, :image_cache
+  attr_accessible :title, :content, :published, :slug, :title, :user_id, :category_ids, :featured, :published_at,
+                  :commentable, :asset_ids, :preview,
+                  :image, :remove_image, :image_cache, :rateable
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -30,6 +32,7 @@ class Article < ActiveRecord::Base
 
   # Associations
   belongs_to :user
+  has_many :ratings, dependent: :destroy
   has_many :assetable_assets, as: :assetable, dependent: :destroy
   has_many :assets, through: :assetable_assets
   has_and_belongs_to_many :categories, uniq: true
@@ -62,7 +65,7 @@ class Article < ActiveRecord::Base
 
   # Callbacks
   before_validation :strip_empty_space
-  before_save :check_if_published_changed
+  before_save :check_if_published_changed, :check_if_featured_changed
 
   # Methods
 
@@ -70,15 +73,18 @@ class Article < ActiveRecord::Base
   # they share together
   def get_most_related_articles(limit)
     rated_articles = {}
-    unless remaining_articles.blank?
-      remaining_articles.each do |article|
+    unless remaining_articles(:published).blank?
+      remaining_articles(:published).each do |article|
         rated_articles[article] = compute_score_for_related_article(article)
       end
     end
     rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..(limit -1)]
   end
 
-
+  # Returns the result of the total sum of the articles rating divided by their number
+  def average_rating
+    ratings.present? ? (ratings.map(&:score).sum.to_f) / ratings.count : []
+  end
 
   # Custom validation that checks if total number of words are above 20
   def check_words_number
@@ -94,6 +100,19 @@ class Article < ActiveRecord::Base
   def check_if_published_changed
     if "published".in? self.changed
       self.published_at = published ? Time.now : nil
+    end
+  end
+
+  def check_if_featured_changed
+    if "featured".in?(self.changed) && featured
+      unless remaining_articles(:featured).blank?
+
+        remaining_articles(:featured).each do |article|
+          article.featured = false
+          article.save
+        end
+
+      end
     end
   end
 
@@ -129,8 +148,8 @@ class Article < ActiveRecord::Base
     score
   end
 
-  def remaining_articles
-    Article.published.reject { |article| article == self }
+  def remaining_articles(scope)
+    Article.send(scope).reject { |article| article == self }
   end
 
 end
