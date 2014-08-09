@@ -6,6 +6,11 @@ $menu-background-color: #282828;
 body {
 }
 
+a {
+	&:visited {
+		color: inherit;
+	}
+}
 .main_container {
 	.row {
 		background-color: RGBA(255,255,255,1);
@@ -47,7 +52,7 @@ header {
 				float: left;
 				margin-right: 30px;
 				a {
-					color: #ccc;
+					color: #ddd;
 					font-family: 'Roboto Condensed';
 					font-size: $menu-font-size;
 					font-weight: 300;
@@ -114,12 +119,13 @@ header {
 
 .article_content {
 	font-size: 21px;
-	color: #353535;
+	color: #444;
 
 	p {
 		font-size: 20px;
 		font-family: "Sorts Mill Goudy";
-		line-height: 1.5;
+		line-height: 1.55;
+		margin-bottom: 22px;
 	}
 
 	blockquote {
@@ -155,7 +161,6 @@ p.chapter-title {
 h3.article_title {
 	font-family: "Cordo";
 	font-family: "Roboto Condensed";
-	color: #484848;
 	font-size: 48px;
 	line-height: 48px;
 	text-transform: uppercase;
@@ -164,6 +169,14 @@ h3.article_title {
 	border-bottom: 1px solid #aaa;
 	padding-bottom: 24px;
 	font-weight: 700;
+	a {
+		transition: 0.3s all ease-in-out;
+		color: #404040;
+		&:hover {
+			color: #222;
+			background: transparent;
+		}
+	}
 }
 
 p.article-preview {
@@ -171,7 +184,7 @@ p.article-preview {
 	font-size: 18px;
 	text-align: center;
 	font-style: italic;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	color: #666;
 }
 
@@ -192,7 +205,7 @@ p.article-preview {
 		margin-bottom: 45px;
 		margin-top: 15px;
 		a.category {
-			padding: 10px;
+			padding: 9px 7px;
 			background-color: #ff3878;
 			color: white;
 			font-family: 'Roboto Condensed';
@@ -200,15 +213,18 @@ p.article-preview {
 			font-size: 16px;
 			margin-bottom: 90px;
 			margin-right: 5px;
+			transition: 0.3s all ease-in-out;
+			&:hover {
+				background-color: #d73065;
+			}
 		}
 	}
 	p.author {
 		float: right;
 		font-family: 'Cordo';
 		font-style: italic;
-		font-size: 14px;
+		font-size: 17px;
 		color: #888;
-		width: 33;
 		text-transform: capitalize;
 		margin-top: 30px;
 	}
@@ -217,6 +233,25 @@ p.article-preview {
 
 img.article-image {
 	margin-bottom: 60px;
+}
+
+.article-mashup {
+	margin-bottom: 90px;
+	padding-bottom: 90px;
+	border-bottom: 2px dotted #777;
+	a.read-more {
+		display: block;
+		float: right;
+		font-family: "Cordo";
+		font-style: italic;
+		font-size: 20px;
+		color: #111;
+		&:hover {
+			background: transparent;
+			color: #666;
+			transition: 0.3s all ease-in-out
+		}
+	}
 }
 
 
@@ -299,9 +334,8 @@ img.article-image {
 		float: right;
 		color: #444;
 		font-size: 16px;
-		font-family: "Roboto Condensed";
-		font-family: "Cordo";
 		font-style: italic;
+		font-family: "Cordo";
 		font-weight: 300;
 		padding: 20px;
 	}
