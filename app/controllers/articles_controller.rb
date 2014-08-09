@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.published
 
-    respond_to do |format|
+     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }
     end
@@ -18,6 +18,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @related_articles = @article.get_most_related_articles(3)
+
+    @rating = Rating.new if @article.rateable?
 
     respond_to do |format|
       format.html # show.html.erb
