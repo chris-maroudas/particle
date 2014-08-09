@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   has_many :assetable_assets, as: :assetable, dependent: :destroy
   has_many :assets, through: :assetable_assets
   belongs_to :role
+  has_many :ratings, dependent: :destroy
 
   before_save :add_default_role
 
