@@ -51,22 +51,31 @@
             = yield
           .medium-4.columns.sidebar
 
+            - unless @featured_article.blank?
+              %h5
+                Featured article
+              .sidebar-article
+                %h4= link_to @featured_article.title, @featured_article
+                %p= @featured_article.preview.capitalize
+                = image_tag @featured_article.image_url(:thumb), class: "sidebar-article-image"
+                %p.time= time_ago_in_words(@featured_article.published_at) + " ago"
+
             - if @article.present?
               %h5
                 Related articles
               - if @related_articles
                 - @related_articles.each do |side_article|
                   .sidebar-article
-                    %h4= side_article.title
+                    %h4= link_to side_article.title, side_article
                     %p= side_article.preview.capitalize
                     = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
                     %p.time= time_ago_in_words(side_article.published_at) + " ago"
 
             %h5
               Recent articles
-            - @side_articles.each do |side_article|
+            - @recent_articles.each do |side_article|
               .sidebar-article
-                %h4= side_article.title
+                %h4= link_to side_article.title, side_article
                 %p= side_article.preview.capitalize
                 = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
                 %p.time= time_ago_in_words(side_article.published_at) + " ago"
