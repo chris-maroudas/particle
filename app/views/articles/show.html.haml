@@ -1,9 +1,11 @@
+- content_for(:title, @article.title.capitalize)
+
 .article-data
   %p.article-category
     - @article.categories.each do |category|
       = link_to category.name, category, class: "category"
   %p.author
-    = " by #{@article.user.name.capitalize}"
+    = " by #{@article.user.name.titleize}"
 
 %p.chapter-title
   = "chapter #{@article.compute_chapter}"
