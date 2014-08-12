@@ -225,8 +225,7 @@ p.article-preview {
 		font-style: italic;
 		font-size: 17px;
 		color: #888;
-		text-transform: capitalize;
-		margin-top: 30px;
+		margin-top: 25px;
 	}
 
 }
@@ -339,4 +338,23 @@ img.article-image {
 		font-weight: 300;
 		padding: 20px;
 	}
+}
+
+
+h1.site-logo {
+	margin-top: 15px;
+	font-size: 40px;
+	color: #5d5d5d;
+	font-family: "Sorts Mill Goudy";
+	font-family: "Roboto Condensed";
+	font-weight: 700;
+	//text-shadow: 1px 2px #bbb;
+}
+
+h2.site-description {
+	font-size: 16px;
+	color: #777;
+	font-family: "Gordo";
+	font-style: italic;
+	margin-left: 75px;
 }
