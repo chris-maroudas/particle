@@ -37,7 +37,6 @@ class Article < ActiveRecord::Base
   has_many :assets, through: :assetable_assets
   has_and_belongs_to_many :categories, uniq: true
 
-
   # Validations
   validates :title,
             presence: true,
@@ -54,7 +53,6 @@ class Article < ActiveRecord::Base
 
   validates_presence_of :categories, :user
   validate :check_words_number
-
 
   # Scopes
   scope :recent, -> do
