@@ -34,5 +34,6 @@ NodeType.create(name: "Show contact page", controller: "contact_pages", action: 
 NodeType.create(name: "Display all articles", controller: "articles", action: "index")
 NodeType.create(name: "Show a media gallery", controller: "media_galleries", action: "show")
 NodeType.create(name: "Display home page", controller: "welcome", action: "index")
+NodeType.create(name: "All categories", controller: "categories", action: "index")
 
 Menu.create(name: "Main menu", position: 1)
