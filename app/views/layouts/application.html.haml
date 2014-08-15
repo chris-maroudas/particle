@@ -5,7 +5,7 @@
 
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
-    %title= content_for?(:title) ? yield(:title) + " | Particle" : "Particle"
+    %title= content_for?(:title) ? yield(:title) + " - Particle" : "Particle"
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
@@ -17,22 +17,24 @@
     %header
       .social_bar
         .row
-          .medium-8.columns
+          .medium-8.columns.logo-container
             %h1.site-logo
               Divine Infusion
             %h2.site-description
               Life, Ruby & lame humor.
           .medium-4.columns
-            - if user_signed_in?
-              %span
-                Logged as:
-                = current_user.name.humanize
-              |
-              = link_to "Log out!", destroy_user_session_path, method: :delete
-            - else
-              = link_to "Sign up"
-              |
-              = link_to "Log in", sign_in_path
+            .social-media
+
+            -#.login-bar
+            -#  - if user_signed_in?
+            -#    %span
+            -#      = current_user.name.humanize
+            -#    |
+            -#    = link_to "Log out!", destroy_user_session_path, method: :delete
+            -#  - else
+            -#    = link_to "Sign up"
+            -#    |
+            -#    = link_to "Log in"
       .menu
         .row
           %ul
