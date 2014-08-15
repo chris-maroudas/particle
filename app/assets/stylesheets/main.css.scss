@@ -17,10 +17,16 @@ a {
 	}
 }
 
+.logo-container {
+	background-image: url("/assets/scan3.jpg");
+	background-repeat: no-repeat;
+	background-position: 60px -2px;
+	height: 100%;
+}
+
 header {
 	height: 205px;
 	width: 100%;
-	background-color: #bcd0f4;
 
 	.social_bar {
 		height: 133px;
@@ -43,14 +49,14 @@ header {
 		background-color: $menu-background-color;
 		ul {
 			list-style-type: none;
-			margin-left: 40px;
+			margin-left: 42px;
 			padding-top: 20px;
 			width: 500px;
 			float: left;
 			li {
 				display: block;
 				float: left;
-				margin-right: 30px;
+				margin-right: 25px;
 				a {
 					color: #ddd;
 					font-family: 'Roboto Condensed';
@@ -301,6 +307,12 @@ img.article-image {
 		font-size: 20px;
 		text-align: center;
 		text-transform: uppercase;
+		a {
+			&:hover {
+				transition: 0.3s all ease-in-out;
+				background-color: #555;
+			}
+		}
 	}
 	p {
 		font-family: "Condo";
@@ -342,19 +354,38 @@ img.article-image {
 
 
 h1.site-logo {
-	margin-top: 15px;
+	margin-left: 60px;
+	margin-top: 25px;
 	font-size: 40px;
 	color: #5d5d5d;
+	color: #515151;
 	font-family: "Sorts Mill Goudy";
 	font-family: "Roboto Condensed";
 	font-weight: 700;
 	//text-shadow: 1px 2px #bbb;
+	line-height: 1;
 }
 
 h2.site-description {
+	margin-left: 120px;
 	font-size: 16px;
 	color: #777;
 	font-family: "Gordo";
 	font-style: italic;
-	margin-left: 75px;
+	margin-bottom: 30px;
+}
+
+.login-bar {
+	padding-top: 10px;
+	text-align: right;
+
+	span, a {
+		color: #555;
+		font-size: 14px;
+		font-family: 'Roboto Condensed', sans-serif;
+		font-weight: 300;
+		&:visited {
+			color: #555;
+		}
+	}
 }
