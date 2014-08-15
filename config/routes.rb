@@ -1,5 +1,4 @@
 Particle::Application.routes.draw do
-  get "ratings/create"
 
   get "search/show"
 
