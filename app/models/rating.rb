@@ -11,7 +11,7 @@
 #
 
 class Rating < ActiveRecord::Base
-  attr_accessible :score, :article_id
+  attr_accessible :score, :article_id, :user_id
 
   belongs_to :user
   belongs_to :article
@@ -27,6 +27,9 @@ class Rating < ActiveRecord::Base
   validates :article,
             presence: true
 
+  # Find how to combine columns in uniequenss
+  # or write your own custom validation
+  # validates_uniqueness_of [:article_id, :user_id]
 
 
   def self.minimum
