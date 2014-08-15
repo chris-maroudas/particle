@@ -27,6 +27,8 @@ class Rating < ActiveRecord::Base
   validates :article,
             presence: true
 
+  validates_uniqueness_of :user_id, scope: :article_id
+
   # Find how to combine columns in uniequenss
   # or write your own custom validation
   # validates_uniqueness_of [:article_id, :user_id]
