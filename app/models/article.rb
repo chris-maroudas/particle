@@ -67,6 +67,16 @@ class Article < ActiveRecord::Base
 
   # Methods
 
+
+  def self.popular_articles(limit)
+    array_of_articles = self.all
+    rated_hash = {}
+    array_of_articles.each do |article|
+      rated_hash[article] = article.average_rating if article.average_rating
+    end
+    rated_hash.sort_by { |key, value| value }.collect { |array| array[0] }.reverse[0..(limit-1)]
+  end
+
   # Returns the most related articles according to how many common categories
   # they share together
   def get_most_related_articles(limit)
@@ -76,12 +86,12 @@ class Article < ActiveRecord::Base
         rated_articles[article] = compute_score_for_related_article(article)
       end
     end
-    rated_articles.sort_by{ |key, value| value }.collect { |array| array [0] }.reverse[0..(limit -1)]
+    rated_articles.sort_by{ |key, value| value }.collect { |array| array[0] }.reverse[0..(limit -1)]
   end
 
   # Returns the result of the total sum of the articles rating divided by their number
   def average_rating
-    ratings.present? ? (ratings.map(&:score).sum.to_f) / ratings.count : []
+    ratings.present? ? (ratings.map(&:score).sum.to_f) / ratings.count : nil
   end
 
   # Custom validation that checks if total number of words are above 20
