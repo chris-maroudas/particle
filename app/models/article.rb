@@ -101,6 +101,8 @@ class Article < ActiveRecord::Base
     end
   end
 
+  # If featured is changed then make sure every other featured article is set to nil
+  # There can be only one featured article. Like Highlander.
   def check_if_featured_changed
     if "featured".in?(self.changed) && featured
       unless remaining_articles(:featured).blank?
@@ -121,12 +123,16 @@ class Article < ActiveRecord::Base
     self.content = content.strip if self.content
   end
 
+  # Computes chapter number for a published article
+  # Chapter depends on published_at time
   def compute_chapter
     unless Article.published.blank?
       Article.published.reverse.index(self) + 1
     end
   end
 
+  # Regenerates new slug when the records column that is being used for slug
+  # gets updated
   def should_generate_new_friendly_id?
     new_record?
   end
@@ -134,6 +140,7 @@ class Article < ActiveRecord::Base
 
   private
 
+  # Computes relation score for parameter article
   def compute_score_for_related_article(article)
     score = 0
     unless article.categories.blank?
@@ -146,6 +153,7 @@ class Article < ActiveRecord::Base
     score
   end
 
+  # Returns an array with the remaining articles from a certain scope, excluding self
   def remaining_articles(scope)
     Article.send(scope).reject { |article| article == self }
   end
