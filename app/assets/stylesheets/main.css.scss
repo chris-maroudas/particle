@@ -403,3 +403,17 @@ h2.site-description {
 	vertical-align: middle;
 }
 
+a.category-preview {
+	padding: 9px 7px;
+	font-family: 'Roboto Condensed';
+	font-weight: 300;
+	font-size: 22px;
+	margin-bottom: 20px;
+	margin-right: 5px;
+	transition: 0.3s all ease-in-out;
+	display: block;
+	text-align: center;
+	&:hover {
+		background-color: #d73065;
+	}
+}
