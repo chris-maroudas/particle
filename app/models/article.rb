@@ -22,8 +22,12 @@ class Article < ActiveRecord::Base
                   :commentable, :asset_ids, :preview,
                   :image, :remove_image, :image_cache, :rateable
 
+  # Friendly id
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  # Pagination
+  paginates_per 3
 
   # Full text search on current fields
   acts_as_indexed :fields => [:title, :preview, :content]
