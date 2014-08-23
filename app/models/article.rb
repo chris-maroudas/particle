@@ -55,11 +55,15 @@ class Article < ActiveRecord::Base
   validate :check_words_number
 
   # Scopes
-  scope :recent, -> do
-    where(['published_at >= ?', 30.days.ago]).order("published_at DESC").limit(3)
+  scope :recent, -> (max = 10) do
+    where(['published_at >= ?', 30.days.ago]).order("published_at DESC").limit(max)
   end
-  scope :published, where(published: true).order("published_at DESC")
-  scope :featured, where(featured: true, published: true). order("published_at DESC")
+
+  scope :published, -> (max = nil) do
+    where(published: true).order("published_at DESC").limit(max)
+  end
+
+  scope :featured, where(featured: true, published: true). order("published_at DESC").limit(1)
 
   # Callbacks
   before_validation :strip_empty_space
@@ -67,7 +71,7 @@ class Article < ActiveRecord::Base
 
   # Methods
 
-  def self.popular_articles(limit)
+  def self.popular_articles(limit = 10)
     array_of_articles = self.all
     rated_hash = {}
     array_of_articles.each do |article|
