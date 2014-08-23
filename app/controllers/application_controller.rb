@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
 
   def create_sidebar_data
-    @recent_articles = Article.recent(3)
+    @recent_articles = Article.recent(2)
     @featured_article = Article.featured.first
     @categories = Category.sorted_by_articles_number
   end
