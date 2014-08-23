@@ -56,7 +56,7 @@ class Article < ActiveRecord::Base
 
   # Scopes
   scope :recent, -> do
-    where(['published_at >= ?', 14.days.ago]).order("published_at DESC").limit(3)
+    where(['published_at >= ?', 30.days.ago]).order("published_at DESC").limit(3)
   end
   scope :published, where(published: true).order("published_at DESC")
   scope :featured, where(featured: true, published: true). order("published_at DESC")
@@ -66,7 +66,6 @@ class Article < ActiveRecord::Base
   before_save :check_if_published_changed, :check_if_featured_changed
 
   # Methods
-
 
   def self.popular_articles(limit)
     array_of_articles = self.all
