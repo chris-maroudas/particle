@@ -92,4 +92,10 @@
             - @categories.each do |category|
               = link_to category.name.titleize + "(#{category.articles.count})", category, class: "sidebar-category-link"
 
+        .row
+          %footer
+            .medium-12.columns
+              %copyright
+                "He had come such a long way, only to find out it was already behind him." by Chris Maroudas, 2014, All Rights Reserved.
+
       = javascript_include_tag "application"
