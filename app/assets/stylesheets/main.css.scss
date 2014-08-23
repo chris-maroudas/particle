@@ -244,6 +244,9 @@ img.article-image {
 	margin-bottom: 90px;
 	padding-bottom: 90px;
 	border-bottom: 2px dotted #777;
+	&:last-child {
+		border-bottom: none;
+	}
 	a.read-more {
 		display: block;
 		float: right;
@@ -367,7 +370,7 @@ h1.site-logo {
 }
 
 h2.site-description {
-	margin-left: 120px;
+	margin-left: 125px;
 	font-size: 16px;
 	color: #777;
 	font-family: "Gordo";
@@ -399,3 +402,4 @@ h2.site-description {
 	color: #555555;
 	vertical-align: middle;
 }
+
