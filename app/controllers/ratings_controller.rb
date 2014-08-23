@@ -5,9 +5,9 @@ class RatingsController < ApplicationController
       @rating = current_user.ratings.new(params[:rating])
       if @rating.valid?
         @rating.save
-        redirect_to Article.find(params[:rating][:article_id]), success: "Comment posted succesfuly"
+        redirect_to @rating.article, success: "Comment posted succesfuly"
       else
-        redirect_to Article.find(params[:rating][:article_id]), notice: "Enter a valid rating"
+        redirect_to @rating.article, notice: "Enter a valid rating"
       end
     else
       redirect_to root_url, notice: "You need to be logged in to post a rating!"
