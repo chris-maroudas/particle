@@ -1,4 +1,5 @@
 // All main application CSS rules located here
+
 $menu-font:	'Roboto Condensed', sans-serif;
 $menu-font-size: 22px;
 $menu-background-color: #282828;
@@ -143,8 +144,8 @@ header {
 		p {
 			width: 80%;
 			text-align: right;
-			font-size: 24px;
-			font-family: 'Cordo';
+			font-size: 22px;
+			font-family: 'Libre Baskerville';
 			border-bottom: 1px solid #777;
 			border-top: 3px solid #777;
 			padding-top: 15px;
@@ -183,8 +184,8 @@ h3.article_title {
 }
 
 p.article-preview {
-	font-family: "Cordo";
-	font-size: 18px;
+	font-family: "Libre Baskerville";
+	font-size: 16px;
 	text-align: center;
 	font-style: italic;
 	margin-bottom: 30px;
@@ -224,9 +225,9 @@ p.article-preview {
 	}
 	p.author {
 		float: right;
-		font-family: 'Cordo';
+		font-family: 'Libre Baskerville';
 		font-style: italic;
-		font-size: 17px;
+		font-size: 15px;
 		color: #888;
 		margin-top: 25px;
 	}
@@ -247,9 +248,9 @@ img.article-image {
 	a.read-more {
 		display: block;
 		float: right;
-		font-family: "Cordo";
+		font-family: "Libre Baskerville";
 		font-style: italic;
-		font-size: 20px;
+		font-size: 18px;
 		color: #111;
 		&:hover {
 			background: transparent;
@@ -265,9 +266,9 @@ img.article-image {
 
 	h5 {
 		text-align: center;
-		font-family: "Cordo";
+		font-family: "Libre Baskerville";
 
-		font-size: 34px;
+		font-size: 30px;
 		font-weight: 400;
 		font-style: italic;
 		text-transform: capitalize;
@@ -281,8 +282,8 @@ img.article-image {
 		margin-bottom: 15px;
 		padding: 5px 2px;
 		color: #555;
-		font-family: "Cordo";
-		font-size: 16px;
+		font-family: "Libre Baskerville";
+		font-size: 14px;
 		text-align: center;
 		&:visited {
 			color: #555;
@@ -313,9 +314,9 @@ img.article-image {
 		}
 	}
 	p {
-		font-family: "Condo";
+		font-family: "Libre Baskerville";
 		text-align: center;
-		font-size: 16px;
+		font-size: 14px;
 		font-style: italic;
 		color: #666;
 	}
@@ -342,9 +343,9 @@ img.article-image {
 		background-color: #f8f8f8 ;
 		float: right;
 		color: #444;
-		font-size: 16px;
+		font-size: 14px;
 		font-style: italic;
-		font-family: "Cordo";
+		font-family: "Libre Baskerville";
 		font-weight: 300;
 		padding: 20px;
 	}
@@ -363,9 +364,9 @@ h1.site-logo {
 
 h2.site-description {
 	margin-left: 125px;
-	font-size: 16px;
+	font-size: 14px;
 	color: #777;
-	font-family: "Gordo";
+	font-family: "Libre Baskerville";
 	font-style: italic;
 	margin-bottom: 30px;
 }
@@ -388,10 +389,10 @@ h2.site-description {
 
 .preview-author {
 	margin-top: 30px;
-	font-family: "Gordo";
-	font-size: 16px;
+	font-family: "Libre Baskerville";
+	font-size: 14px;
 	font-style: italic;
-	color: #555555;
+	color: #333;
 	vertical-align: middle;
 }
 
@@ -428,7 +429,7 @@ footer {
 }
 
 nav.pagination {
-	font-family: "Gordo";
+	font-family: "Libre Baskerville";
 	font-style: italic;
 	font-size: 14px;
 	color: #222;
@@ -436,5 +437,30 @@ nav.pagination {
 
 	span {
 		margin-right: 10px;
+
+		a {
+			&:hover {
+				background: none;
+				color: #000;
+			}
+		}
+	}
+}
+
+.social-media {
+	padding-top: 50px;
+	a.social-media-links {
+		margin-left: 15px;
+		i {
+			font-size: 30px;
+			color: #777;
+			&:hover {
+				transition: 0.3s all ease-in-out;
+				color: #444;
+			}
+		}
+		&:hover {
+			background: none;
+		}
 	}
 }
