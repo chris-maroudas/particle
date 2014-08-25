@@ -46,8 +46,6 @@ gem 'cancan'
 gem 'babosa'
 
 group :development do
-  gem 'guard'
-  gem 'guard-livereload', require: false
   gem 'thin'
   gem 'quiet_assets'
   gem 'better_errors'
@@ -58,6 +56,8 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'table_print'
+
+  gem 'sqlite3'
 end
 
 group :production do
