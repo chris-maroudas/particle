@@ -158,15 +158,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mailcatcher (0.5.12)
-      activesupport (~> 3.0)
-      eventmachine (~> 1.0.0)
-      haml (>= 3.1, < 5)
-      mail (~> 2.3)
-      sinatra (~> 1.2)
-      skinny (~> 0.2.3)
-      sqlite3 (~> 1.3)
-      thin (~> 1.5.0)
     maildir (2.1.0)
     mailman (0.7.0)
       activesupport (>= 2.3.4)
@@ -215,8 +206,6 @@ GEM
     rack-pjax (0.7.0)
       nokogiri (~> 1.5)
       rack (~> 1.3)
-    rack-protection (1.5.3)
-      rack
     rack-ssl (1.3.4)
       rack
     rack-test (0.6.2)
@@ -273,13 +262,6 @@ GEM
     simple_form (2.1.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    sinatra (1.4.5)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
-    skinny (0.2.3)
-      eventmachine (~> 1.0.0)
-      thin (~> 1.5.0)
     slop (3.5.0)
     smart_listing (1.0.0)
       coffee-rails
@@ -292,7 +274,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.9)
     sshkit (1.4.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -353,7 +334,6 @@ DEPENDENCIES
   html2haml
   jquery-rails
   kaminari
-  mailcatcher
   mailman
   meta_request
   mini_magick
