@@ -40,7 +40,7 @@ gem 'truncate_html'
 gem 'capistrano'
 gem 'globalize', '~> 3.1.0' # Specific need for Rails 3.2.16
 gem 'html2haml'
-gem 'chartkick'
+# gem 'chartkick'
 gem 'groupdate'
 gem 'country_select'
 gem 'smart_listing'
