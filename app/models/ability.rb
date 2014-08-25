@@ -44,12 +44,13 @@ class Ability
         can [:read, :create, :destroy], Ckeditor::AttachmentFile
       elsif user.role? :user
         can :read, Article
+        can :read, Category
         #can :read, Post, published: true
       end
 
     else
       # For non logged users
-      can :read, [Article]
+      can :read, [Article, Category]
     end
 
     # Define abilities for the passed in user here. For example:
