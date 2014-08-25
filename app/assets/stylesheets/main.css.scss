@@ -210,8 +210,8 @@ p.article-preview {
 		margin-top: 15px;
 		a.category {
 			padding: 9px 7px;
-			background-color: #ff3878;
-			color: white;
+			background-color: #f63a78;
+			color: #fff;
 			font-family: 'Roboto Condensed';
 			font-weight: 300;
 			font-size: 16px;
@@ -239,11 +239,12 @@ img.article-image {
 }
 
 .article-mashup {
-	margin-bottom: 90px;
-	padding-bottom: 90px;
-	border-bottom: 1px dotted #777;
-	&:last-child {
-		border-bottom: none;
+	margin-bottom: 80px;
+	padding-top: 80px;
+	border-top: 1px dotted #777;
+	&:first-child {
+		border-top: none;
+		padding-top: 40px;
 	}
 	a.read-more {
 		display: block;
