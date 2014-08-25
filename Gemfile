@@ -44,9 +44,9 @@ gem 'rails-footnotes'
 gem 'devise'
 gem 'cancan'
 gem 'babosa'
+gem 'thin'
 
 group :development do
-  gem 'thin'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'meta_request'
