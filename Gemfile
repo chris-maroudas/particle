@@ -7,17 +7,7 @@ gem 'rails', '3.2.16'
 # Database
 
 # Debugging
-gem 'thin'
-gem 'quiet_assets'
-gem 'better_errors'
-gem 'meta_request'
-gem 'binding_of_caller'
-gem 'rails-footnotes'
-gem 'annotate'
-gem 'awesome_print'
-gem 'pry'
-gem 'pry-rails'
-gem 'table_print'
+
 
 # Default
 gem 'friendly_id', "~> 4.0.10.1"
@@ -56,6 +46,17 @@ gem 'babosa'
 group :development do
   gem 'guard'
   gem 'guard-livereload', require: false
+  gem 'thin'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'meta_request'
+  gem 'binding_of_caller'
+  gem 'rails-footnotes'
+  gem 'annotate'
+  gem 'awesome_print'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'table_print'
 end
 
 group :production do
