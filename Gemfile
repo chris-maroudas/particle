@@ -37,6 +37,8 @@ gem 'smart_listing'
 gem 'numbers_and_words'
 gem "social-buttons"
 gem 'acts_as_indexed'
+gem 'rails-footnotes'
+
 
 # Authorization / Authentication
 gem 'devise'
@@ -51,7 +53,6 @@ group :development do
   gem 'better_errors'
   gem 'meta_request'
   gem 'binding_of_caller'
-  gem 'rails-footnotes'
   gem 'annotate'
   gem 'awesome_print'
   gem 'pry'
