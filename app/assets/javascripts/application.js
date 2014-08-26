@@ -15,6 +15,7 @@
 //= require foundation
 //= require ckeditor/init
 //= require_tree .
+//= require modernizr
 
 $(function(){ $(document).foundation(); });
 
