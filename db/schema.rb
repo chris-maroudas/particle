@@ -142,9 +142,9 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
 
   create_table "ratings", :force => true do |t|
     t.integer  "score"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "user_id",    :limit => 255
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
     t.integer  "article_id"
   end
 
