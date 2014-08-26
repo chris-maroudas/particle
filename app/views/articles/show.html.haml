@@ -19,8 +19,9 @@
 .article_content
   = raw @article.content
 
-.social-icons
-  = tweet_button(count: :none, text: truncate(@article.preview, length: 60, separator: " "), via: :chris_maroudas)
+.wrapper-clear
+  .social-icons
+    = tweet_button(count: :none, text: truncate(@article.preview, length: 60, separator: " "), via: :chris_maroudas)
 
 .article-author
   .author-image
