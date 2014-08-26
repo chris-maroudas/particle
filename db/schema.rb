@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140809175200) do
+ActiveRecord::Schema.define(:version => 20140826020342) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -142,9 +142,9 @@ ActiveRecord::Schema.define(:version => 20140809175200) do
 
   create_table "ratings", :force => true do |t|
     t.integer  "score"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "user_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "user_id",    :limit => 255
     t.integer  "article_id"
   end
 
