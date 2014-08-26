@@ -31,7 +31,6 @@ gem 'truncate_html'
 gem 'capistrano'
 gem 'globalize', '~> 3.1.0' # Specific need for Rails 3.2.16
 gem 'html2haml'
-# gem 'chartkick'
 gem 'groupdate'
 gem 'country_select'
 gem 'smart_listing'
@@ -39,7 +38,7 @@ gem 'numbers_and_words'
 gem "social-buttons"
 gem 'acts_as_indexed'
 gem 'rails-footnotes'
-
+gem 'fog'
 
 # Authorization / Authentication
 gem 'devise'
