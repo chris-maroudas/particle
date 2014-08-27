@@ -44,7 +44,9 @@ gem 'fog'
 gem 'devise'
 gem 'cancan'
 gem 'babosa'
-gem 'thin'
+
+# Server
+
 
 group :development do
   gem 'quiet_assets'
@@ -56,11 +58,12 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'table_print'
-
+  gem 'thin'
   gem 'sqlite3'
 end
 
 group :production do
+  gem 'unicorn'
   gem 'pg'
   gem 'rails_12factor'
 end
