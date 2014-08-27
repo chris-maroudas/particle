@@ -57,6 +57,7 @@ group :development do
   gem 'table_print'
   gem 'thin'
   gem 'sqlite3'
+  gem 'bullet'
 end
 
 group :production do

@@ -37,4 +37,12 @@ Particle::Application.configure do
 
   # Devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.add_footer = true
+    Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+  end
 end

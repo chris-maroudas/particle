@@ -44,6 +44,9 @@ GEM
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.0.4)
+    bullet (4.13.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     callsite (0.0.11)
     cancan (1.6.10)
     carrierwave (0.10.0)
@@ -257,6 +260,7 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.6.2)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -270,6 +274,7 @@ DEPENDENCIES
   babosa
   better_errors
   binding_of_caller
+  bullet
   cancan
   carrierwave
   ckeditor
