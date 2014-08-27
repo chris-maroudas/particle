@@ -21,19 +21,19 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'mini_magick'
-gem 'choice'
-gem 'ancestry'
+# gem 'choice'
+# gem 'ancestry'
 gem 'rails_admin'
-gem 'omniauth'
-gem 'figaro'
-gem 'mailman'
+# gem 'omniauth'
+# gem 'figaro'
+# gem 'mailman'
 gem 'truncate_html'
-gem 'capistrano'
-gem 'globalize', '~> 3.1.0' # Specific need for Rails 3.2.16
-gem 'html2haml'
-gem 'groupdate'
-gem 'country_select'
-gem 'smart_listing'
+# gem 'capistrano'
+# gem 'globalize', '~> 3.1.0' # Specific need for Rails 3.2.16
+# gem 'html2haml'
+# gem 'groupdate'
+# gem 'country_select'
+# gem 'smart_listing'
 gem 'numbers_and_words'
 gem "social-buttons"
 gem 'acts_as_indexed'
@@ -60,7 +60,7 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'passenger'
   gem 'pg'
   gem 'rails_12factor'
 end
