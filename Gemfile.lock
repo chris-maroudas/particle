@@ -200,7 +200,15 @@ GEM
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
     orm_adapter (0.5.0)
+    os (0.9.6)
     pg (0.17.1)
+    piet (0.2.0)
+      png_quantizator
+    piet-binary (0.2.0)
+      os (~> 0.9.6)
+      piet (>= 0.2.0)
+      png_quantizator
+    png_quantizator (0.1.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -364,6 +372,8 @@ DEPENDENCIES
   numbers_and_words
   omniauth
   pg
+  piet
+  piet-binary
   pry
   pry-rails
   quiet_assets

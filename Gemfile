@@ -45,7 +45,9 @@ gem 'devise'
 gem 'cancan'
 gem 'babosa'
 
-# Server
+# Image optimization
+gem 'piet'
+gem 'piet-binary'
 
 
 group :development do

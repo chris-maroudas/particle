@@ -2,6 +2,8 @@
 
 class ArticlesUploader < CarrierWave::Uploader::Base
 
+  include Piet::CarrierWaveExtension
+
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -33,10 +35,12 @@ class ArticlesUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
 
   version :thumb do
+    process :optimize
     process :resize_to_fill => [248, 135]
   end
 
   version :full do
+    process :optimize
     process :resize_to_fill => [581, 300]
   end
 
