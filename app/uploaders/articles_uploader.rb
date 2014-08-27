@@ -2,6 +2,8 @@
 
 class ArticlesUploader < CarrierWave::Uploader::Base
 
+  include Piet::CarrierWaveExtension
+
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -34,10 +36,12 @@ class ArticlesUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :resize_to_fill => [248, 135]
+    process :optimize
   end
 
   version :full do
     process :resize_to_fill => [581, 300]
+    process :optimize
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

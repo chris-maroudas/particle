@@ -45,6 +45,10 @@ gem 'devise'
 gem 'cancan'
 gem 'babosa'
 
+# Image optimization
+gem 'piet'
+gem 'piet-binary'
+
 
 group :development do
   gem 'quiet_assets'
