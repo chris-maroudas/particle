@@ -39,11 +39,13 @@ gem "social-buttons"
 gem 'acts_as_indexed'
 gem 'rails-footnotes'
 gem 'fog'
+gem 'figaro'
 
 # Authorization / Authentication
 gem 'devise'
 gem 'cancan'
 gem 'babosa'
+
 
 group :development do
   gem 'quiet_assets'
