@@ -58,7 +58,7 @@
             - if @featured_article.present?
               %h5
                 Featured article
-              = render partial: "shared/sidebar_article", locals: @featured_article, as: :side_article
+              = render partial: "shared/sidebar_article", object: @featured_article, as: :side_article
 
             - if @article.present?
               %h5
