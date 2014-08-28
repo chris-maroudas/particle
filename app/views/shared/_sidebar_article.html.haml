@@ -1,0 +1,5 @@
+.sidebar-article
+  %h4= link_to side_article.title, side_article
+  %p= side_article.preview.capitalize
+  = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
+  %p.time= time_ago_in_words(side_article.published_at) + " ago"

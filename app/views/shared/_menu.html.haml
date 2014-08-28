@@ -1,0 +1,10 @@
+.menu
+  .row
+    %ul
+      - unless @menu.blank?
+        - @menu.nodes.each do |node|
+          %li= menu_link_for node
+    .search-bar
+      = form_tag(search_show_path, method: :get) do
+        = text_field_tag :query, nil, placeholder: "Search here"
+        = submit_tag "Search"

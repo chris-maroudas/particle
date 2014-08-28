@@ -41,16 +41,8 @@
             -#    = link_to "Sign up"
             -#    |
             -#    = link_to "Log in"
-      .menu
-        .row
-          %ul
-            - unless @menu.blank?
-              - @menu.nodes.each do |node|
-                %li= menu_link_for node
-          .search-bar
-            = form_tag(search_show_path, method: :get) do
-              = text_field_tag :query, nil, placeholder: "Search here"
-              = submit_tag "Search"
+
+      = render "shared/menu"
 
 
     %section{'data-type' => "background", "data-speed" => "12", class: "pages", id: "home"}
@@ -63,35 +55,20 @@
           .medium-8.columns
             = yield
           .medium-4.columns.sidebar
-
-            - unless @featured_article.blank?
+            - if @featured_article.present?
               %h5
                 Featured article
-              .sidebar-article
-                %h4= link_to @featured_article.title, @featured_article
-                %p= @featured_article.preview.capitalize
-                = image_tag @featured_article.image_url(:thumb), class: "sidebar-article-image"
-                %p.time= time_ago_in_words(@featured_article.published_at) + " ago"
+              = render partial: "shared/sidebar_article", locals: @featured_article, as: :side_article
 
             - if @article.present?
               %h5
                 Related articles
-              - if @related_articles
-                - @related_articles.each do |side_article|
-                  .sidebar-article
-                    %h4= link_to side_article.title, side_article
-                    %p= side_article.preview.capitalize
-                    = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
-                    %p.time= time_ago_in_words(side_article.published_at) + " ago"
+              = render partial: "shared/sidebar_article", collection: @related_articles, as: :side_article
 
-            %h5
-              Recent articles
-            - @recent_articles.each do |side_article|
-              .sidebar-article
-                %h4= link_to side_article.title, side_article
-                %p= side_article.preview.capitalize
-                = image_tag side_article.image_url(:thumb), class: "sidebar-article-image"
-                %p.time= time_ago_in_words(side_article.published_at) + " ago"
+            - if @recent_articles.present?
+              %h5
+                Recent articles
+              = render partial: "shared/sidebar_article", collection: @recent_articles, as: :side_article
 
             %h5
               Categories
