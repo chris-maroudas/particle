@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article = Article.find(params[:id])
+    @article = Article.includes(:categories).find(params[:id])
     @related_articles = @article.get_most_related_articles(3)
 
     @rating = Rating.new if @article.rateable?
