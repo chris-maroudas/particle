@@ -6,7 +6,7 @@
 #  score      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :string(255)
+#  user_id    :integer
 #  article_id :integer
 #
 

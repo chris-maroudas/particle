@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140826020342) do
+ActiveRecord::Schema.define(:version => 20140828001153) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -29,10 +29,15 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
     t.boolean  "rateable",     :default => false
   end
 
+  add_index "articles", ["slug"], :name => "index_articles_on_slug"
+  add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
+
   create_table "articles_categories", :id => false, :force => true do |t|
     t.integer "article_id"
     t.integer "category_id"
   end
+
+  add_index "articles_categories", ["article_id", "category_id"], :name => "index_articles_categories_on_article_id_and_category_id"
 
   create_table "assetable_assets", :force => true do |t|
     t.integer  "assetable_id"
@@ -41,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "assetable_assets", ["assetable_id", "asset_id"], :name => "index_assetable_assets_on_assetable_id_and_asset_id"
 
   create_table "assets", :force => true do |t|
     t.string   "title"
@@ -71,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
     t.datetime "updated_at", :null => false
     t.string   "slug"
   end
+
+  add_index "categories", ["slug"], :name => "index_categories_on_slug"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -127,6 +136,8 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
     t.datetime "updated_at",     :null => false
   end
 
+  add_index "nodes", ["menu_id", "node_type_id"], :name => "index_nodes_on_menu_id_and_node_type_id"
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -163,6 +174,8 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
     t.boolean  "is_gallery"
   end
 
+  add_index "static_pages", ["slug"], :name => "index_static_pages_on_slug"
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -183,5 +196,6 @@ ActiveRecord::Schema.define(:version => 20140826020342) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

@@ -15,6 +15,7 @@
 #  commentable  :boolean          default(FALSE)
 #  preview      :string(255)
 #  image        :string(255)
+#  rateable     :boolean          default(FALSE)
 #
 
 class Article < ActiveRecord::Base
