@@ -40,6 +40,7 @@ gem 'acts_as_indexed'
 gem 'rails-footnotes'
 gem 'fog'
 gem 'figaro'
+gem 'faker'
 
 # Authorization / Authentication
 gem 'devise'
