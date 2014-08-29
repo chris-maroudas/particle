@@ -173,7 +173,7 @@ class Article < ActiveRecord::Base
 
   # Returns an array with the remaining articles from a certain scope, excluding self
   def remaining_articles(scope)
-    Article.send(scope).reject { |article| article == self }
+    Article.includes(:categories).send(scope).reject { |article| article == self }
   end
 
 end
