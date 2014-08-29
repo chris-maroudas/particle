@@ -37,3 +37,16 @@ NodeType.create(name: "Display home page", controller: "welcome", action: "index
 NodeType.create(name: "All categories", controller: "categories", action: "index")
 
 Menu.create(name: "Main menu", position: 1)
+
+20.times do
+  data = {
+    title: Faker::Lorem.sentences(1).join,
+    preview: Faker::Lorem.sentences(1).join,
+    content: Faker::Lorem.sentences(40).join,
+    published: true
+  }
+  article = Article.new(data)
+  article.user_id = User.first.id
+  article.categories = Category.all
+  article.save
+end
