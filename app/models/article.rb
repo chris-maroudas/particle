@@ -107,7 +107,7 @@ class Article < ActiveRecord::Base
     unless content.blank?
       words_number = content.split(" ").count
       if words_number < 20
-        errors.add(:content, "Total count of words should be more than 20")
+        errors.add(:content, "Total count of words should be more than 20.")
       end
     end
   end
