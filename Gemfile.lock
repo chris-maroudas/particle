@@ -65,6 +65,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    daemon_controller (1.2.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (3.2.4)
@@ -158,6 +159,10 @@ GEM
       activesupport
       i18n
     orm_adapter (0.5.0)
+    passenger (4.0.49)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.9.12.6)
@@ -292,6 +297,7 @@ DEPENDENCIES
   meta_request
   mini_magick
   numbers_and_words
+  passenger
   pg
   pry
   pry-rails
