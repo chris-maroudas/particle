@@ -64,7 +64,8 @@ group :development do
 end
 
 group :production do
-  gem 'passenger'
+  #gem 'passenger'
+  gem 'thin'
   gem 'pg'
   gem 'rails_12factor'
 end
